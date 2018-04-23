@@ -3,11 +3,12 @@
 
 var $body = $('body');
 var $navLink = $('nav a');
+var $ajax = $('#ajax');
 
 
 
 // onload
-$('#ajax').load('html/design.html');
+$ajax.load('html/design.html');
 
 
 
@@ -17,6 +18,8 @@ $('#ajax').load('html/design.html');
 $navLink.click(function() {
   $navLink.removeClass('selected');
   $(this).addClass('selected');
+  $body.removeClass('expanded-page');
+  console.log('generic');
   return false;
 });
 
@@ -32,7 +35,9 @@ $navLink.hover(
 
 
 $('.nav-design').click(function() {
-  $('#ajax').load('html/design.html');
+  $ajax.load('html/design.html');
+  console.log('specific');
+  return false;
   /*
   window.history.pushState('design', 'rgb /design', '/design');
   return false;
@@ -40,10 +45,16 @@ $('.nav-design').click(function() {
 });
 $('.nav-photography').click(function() {
   $('#ajax').load('html/photography.html');
+  console.log('specific');
+  return false;
 });
 $('.nav-resume').click(function() {
   $('#ajax').load('html/resume.html');
+  console.log('specific');
+  return false;
 });
 $('.nav-about').click(function() {
   $('#ajax').load('html/about.html');
+  console.log('specific');    
+  return false;
 });
