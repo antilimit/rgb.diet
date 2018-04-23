@@ -1,0 +1,231 @@
+
+
+body {
+  /* font-family: 'proxima_nova_ltthin', sans-serif; */
+  font-family: 'Barlow', sans-serif;
+  background:#fff;
+  font-weight:100;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight:300;
+}
+
+
+
+
+
+.navigation {
+  width:35vw;
+  background:#fff;
+  position:fixed;
+  display:flex;
+  height:100vh;
+  justify-content:flex-end;
+  align-items:center;
+  transition:all 0.3s ease;
+
+  nav {
+    padding:0 3vw 0 0;
+    line-height:1.2;
+    a {
+      transition:all 0.5s ease;
+      font-size:2.3vw;
+      display:block;
+      text-align:right;
+      font-weight:300;
+    }
+  }
+  header {
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding:0 0 2vw 2vw;
+  }
+}
+
+
+
+
+
+
+
+.content {
+  width:65vw;
+  position:absolute;
+  left:35vw;
+  transition:all 0.3s ease;
+
+  .blocker-top,
+  .blocker-bottom {
+    position:fixed;
+    background:#fff;
+    height:2vw;
+    width:100%;
+    display:block;
+  }
+  .blocker-top {
+    top:0;
+  }
+  .blocker-bottom {
+    bottom:0;
+  }
+  .list {
+    padding:2vw 2vw 2vw 0;
+
+    .row {
+      height:33vh;
+      color:#fff;
+      position:relative;
+      transition:all 0.5s ease;
+      display:flex;
+      justify-content: flex-start;
+      align-items:flex-end;
+      background-position:right center;
+      background-repeat:no-repeat;
+      background-size:cover;
+
+      .info {
+        padding:0 40% 1vw 1vw;
+        h1 {
+          font-size:130%;
+          font-weight:300;
+        }
+        em {
+          font-style:normal;
+          font-size:90%;
+          font-weight:100;
+        }
+      }
+    }
+  } /* list */
+
+}
+
+
+
+
+
+
+/* toggle classes */
+
+
+
+.expanded-page {
+  .navigation {
+    width:30vw;
+    nav {
+      a {
+        font-size:2.1vw;
+      }
+    }
+  }
+  .content {
+    left:30vw;
+    width:70vw;
+    .list {
+      .row {
+        display:none;
+      }
+    }
+  }
+}
+
+.content {
+  .list {
+    .expanded-row {
+      display:flex !important;
+      height:70vw;
+      align-items:center;
+    }
+  }
+
+}
+
+
+
+
+
+
+#row-cube-moments {
+  background-color:#7F0258;
+  background-image:url(../img/cubemoments/hero.jpg);
+}
+#row-the-cube {
+  background-color:#e45d25;
+  background-image:url(../img/thecube/hero.jpg);
+}
+#row-your-trainer {
+  background-color:#A4C4C9;
+  background-image:url(../img/yourtrainer/hero.jpg);
+}
+#row-cave-digger {
+  background-color:#2B2116;
+}
+#row-pigments {
+  background-color:#F27B7A;
+  background-image:url(../img/pigments/hero.jpg);
+}
+#row-high-school-cube {
+  background-color:#5C5F69;
+  background-image:url(../img/hsc/hero.jpg);
+}
+#row-idig-house {
+  background-color:#D88500;
+}
+#row-auto {
+  background-color:#4AAB9E;
+}
+#row-apartment-home-living {
+  background-color:#0070bf;
+}
+#row-vector-art {
+  background-color:#65A69C;
+}
+#row-antilmit {
+  background-color:#000;
+}
+#row-facing-asia {
+  background-color:#BA731C;
+}
+#row-exotics {
+  background-color:#F5E5D9;
+}
+#row-mymedia {
+  background-color:#909A7E;
+}
+#row-dst {
+  background-color:#DDE3E1;
+}
+#row-invicible {
+  background-color:#F8934A;
+}
+#row-vintage {
+  background-color:#999999;
+}
+#row-days-of-war {
+  background-color:#748195;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+
+}

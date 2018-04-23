@@ -1,0 +1,149 @@
+body {
+  /* font-family: 'proxima_nova_ltthin', sans-serif; */
+  font-family: 'Barlow', sans-serif;
+  background: #fff;
+  font-weight: 100; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 300; }
+
+.navigation {
+  width: 35vw;
+  background: #fff;
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.3s ease; }
+  .navigation nav {
+    padding: 0 3vw 0 0;
+    line-height: 1.2; }
+    .navigation nav a {
+      transition: all 0.5s ease;
+      font-size: 2.3vw;
+      display: block;
+      text-align: right;
+      font-weight: 300; }
+  .navigation header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 0 2vw 2vw; }
+
+.content {
+  width: 65vw;
+  position: absolute;
+  left: 35vw;
+  transition: all 0.3s ease;
+  /* list */ }
+  .content .blocker-top,
+  .content .blocker-bottom {
+    position: fixed;
+    background: #fff;
+    height: 2vw;
+    width: 100%;
+    display: block; }
+  .content .blocker-top {
+    top: 0; }
+  .content .blocker-bottom {
+    bottom: 0; }
+  .content .list {
+    padding: 2vw 2vw 2vw 0; }
+    .content .list .row {
+      height: 33vh;
+      color: #fff;
+      position: relative;
+      transition: all 0.5s ease;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+      .content .list .row .info {
+        padding: 0 40% 1vw 1vw; }
+        .content .list .row .info h1 {
+          font-size: 130%;
+          font-weight: 300; }
+        .content .list .row .info em {
+          font-style: normal;
+          font-size: 90%;
+          font-weight: 100; }
+
+/* toggle classes */
+.expanded-page .navigation {
+  width: 30vw; }
+  .expanded-page .navigation nav a {
+    font-size: 2.1vw; }
+.expanded-page .content {
+  left: 30vw;
+  width: 70vw; }
+  .expanded-page .content .list .row {
+    display: none; }
+
+.content .list .expanded-row {
+  display: flex !important;
+  height: 70vw;
+  align-items: center; }
+
+#row-cube-moments {
+  background-color: #7F0258;
+  background-image: url(../img/cubemoments/hero.jpg); }
+
+#row-the-cube {
+  background-color: #e45d25;
+  background-image: url(../img/thecube/hero.jpg); }
+
+#row-your-trainer {
+  background-color: #A4C4C9;
+  background-image: url(../img/yourtrainer/hero.jpg); }
+
+#row-cave-digger {
+  background-color: #2B2116; }
+
+#row-pigments {
+  background-color: #F27B7A;
+  background-image: url(../img/pigments/hero.jpg); }
+
+#row-high-school-cube {
+  background-color: #5C5F69;
+  background-image: url(../img/hsc/hero.jpg); }
+
+#row-idig-house {
+  background-color: #D88500; }
+
+#row-auto {
+  background-color: #4AAB9E; }
+
+#row-apartment-home-living {
+  background-color: #0070bf; }
+
+#row-vector-art {
+  background-color: #65A69C; }
+
+#row-antilmit {
+  background-color: #000; }
+
+#row-facing-asia {
+  background-color: #BA731C; }
+
+#row-exotics {
+  background-color: #F5E5D9; }
+
+#row-mymedia {
+  background-color: #909A7E; }
+
+#row-dst {
+  background-color: #DDE3E1; }
+
+#row-invicible {
+  background-color: #F8934A; }
+
+#row-vintage {
+  background-color: #999999; }
+
+#row-days-of-war {
+  background-color: #748195; }
+
+/*# sourceMappingURL=styles.css.map */
