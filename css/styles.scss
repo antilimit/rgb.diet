@@ -1,14 +1,26 @@
+$green: #CCEC6C;
+$red: #F64F00;
+$blue: #5189C2;
 
 
 body {
   /* font-family: 'proxima_nova_ltthin', sans-serif; */
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   background:#fff;
-  font-weight:100;
+  font-weight:200;
+  color:#999;
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight:300;
+  font-weight:400;
+}
+
+a {
+  color:#000;
+}
+a:hover {
+  text-decoration:none;
+  color:$red;
 }
 
 
@@ -26,14 +38,20 @@ h1, h2, h3, h4, h5 {
   transition:all 0.3s ease;
 
   nav {
-    padding:0 3vw 0 0;
+    padding:0 5vw 0 0;
     line-height:1.2;
     a {
       transition:all 0.5s ease;
-      font-size:2.3vw;
+      font-size:2.5vw;
       display:block;
       text-align:right;
-      font-weight:300;
+      font-weight:200;
+    }
+    a:hover {
+
+    }
+    .selected {
+      font-weight:400;
     }
   }
   header {
@@ -41,6 +59,19 @@ h1, h2, h3, h4, h5 {
     bottom:0;
     left:0;
     padding:0 0 2vw 2vw;
+    p {
+      padding:0;
+      margin:0;
+      letter-spacing:0.05em;
+      font-size:115%;
+    }
+    .logo {
+      font-size:650%;
+      letter-spacing:-0.19em;
+      .green { color:$green; }
+      .red { color:$red; }
+      .blue { color:$blue; }
+    }
   }
 }
 
@@ -60,9 +91,10 @@ h1, h2, h3, h4, h5 {
   .blocker-bottom {
     position:fixed;
     background:#fff;
-    height:2vw;
+    height:1.5vw;
     width:100%;
     display:block;
+    transition:all 0.5s ease;
   }
   .blocker-top {
     top:0;
@@ -71,7 +103,19 @@ h1, h2, h3, h4, h5 {
     bottom:0;
   }
   .list {
-    padding:2vw 2vw 2vw 0;
+    padding:1.5vw 1.5vw 1.5vw 0;
+    transition:all 0.5s ease;
+
+    .left-accent {
+      position:absolute;
+      opacity:0.80;
+      height:100%;
+      background:#fff;
+      top:0;
+      left:0;
+      width:0.3em;
+      mix-blend-mode: difference;
+    }
 
     .row {
       height:33vh;
@@ -86,23 +130,44 @@ h1, h2, h3, h4, h5 {
       background-size:cover;
 
       .info {
-        padding:0 40% 1vw 1vw;
+        padding:0 40% 1.2em 1.5em;
         h1 {
           font-size:130%;
-          font-weight:300;
+          font-weight:400;
+          margin:0;
         }
         em {
           font-style:normal;
           font-size:90%;
-          font-weight:100;
         }
       }
-    }
+    } /* row */
   } /* list */
 
 }
 
 
+
+
+
+/* overrides */
+
+
+#design {
+
+}
+
+#photography {
+
+}
+
+#resume {
+
+}
+
+#about {
+  
+}
 
 
 
@@ -123,9 +188,16 @@ h1, h2, h3, h4, h5 {
   .content {
     left:30vw;
     width:70vw;
+    .blocker-top, .blocker-bottom {
+      height:0;
+    }
     .list {
-      .row {
+      padding-right:0;
+      .left-accent {
         display:none;
+      }
+      .row {
+        opacity:0;
       }
     }
   }
@@ -135,6 +207,7 @@ h1, h2, h3, h4, h5 {
   .list {
     .expanded-row {
       display:flex !important;
+      opacity:1 !important;
       height:70vw;
       align-items:center;
     }
