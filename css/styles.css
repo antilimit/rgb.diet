@@ -13,7 +13,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #F64F00; }
+  color: #000; }
 
 .navigation {
   width: 35vw;
@@ -28,13 +28,22 @@ a:hover {
     padding: 0 5vw 0 0;
     line-height: 1.2; }
     .navigation nav a {
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
       font-size: 2.5vw;
       display: block;
       text-align: right;
       font-weight: 200; }
+    .navigation nav .hovered {
+      opacity: 0.40; }
+    .navigation nav .focused {
+      opacity: 1; }
+    .navigation nav .selected.hovered {
+      opacity: 0.05 !important;
+      font-weight: 200;
+      /* text-decoration:line-through; */ }
     .navigation nav .selected {
-      font-weight: 400; }
+      font-weight: 400;
+      cursor: default; }
   .navigation header {
     position: absolute;
     bottom: 0;
@@ -51,7 +60,7 @@ a:hover {
       .navigation header .logo .green {
         color: #CCEC6C; }
       .navigation header .logo .red {
-        color: #F64F00; }
+        color: #AE5158; }
       .navigation header .logo .blue {
         color: #5189C2; }
 
@@ -65,7 +74,7 @@ a:hover {
   .content .blocker-bottom {
     position: fixed;
     background: #fff;
-    height: 1.5vw;
+    height: 1.2vw;
     width: 100%;
     display: block;
     transition: all 0.5s ease; }
@@ -73,13 +82,23 @@ a:hover {
     top: 0; }
   .content .blocker-bottom {
     bottom: 0; }
+  .content .back {
+    background: #fff;
+    padding: 0.5em;
+    transform: scaleY(0.6);
+    position: fixed;
+    top: 0;
+    right: 1.2vw;
+    font-size: 200%; }
+  .content .wrapper {
+    padding: 1.2vw 1.2vw 1.2vw 0;
+    position: relative; }
   .content .list {
-    padding: 1.5vw 1.5vw 1.5vw 0;
     transition: all 0.5s ease;
     /* row */ }
     .content .list .left-accent {
       position: absolute;
-      opacity: 0.80;
+      opacity: 1;
       height: 100%;
       background: #fff;
       top: 0;
@@ -108,6 +127,9 @@ a:hover {
           font-size: 90%; }
 
 /* overrides */
+#about .video {
+  width: 100%; }
+
 /* toggle classes */
 .expanded-page .navigation {
   width: 30vw; }

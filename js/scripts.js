@@ -1,17 +1,18 @@
+
 // vars
 
-var $row = $('.row');
 var $body = $('body');
 var $navLink = $('nav a');
 
 
 
-// events & clicks
+// onload
+$('#ajax').load('html/design.html');
 
-$row.click(function() {
-  $body.toggleClass('expanded-page');
-  $(this).toggleClass('expanded-row');
-});
+
+
+
+// events
 
 $navLink.click(function() {
   $navLink.removeClass('selected');
@@ -19,26 +20,30 @@ $navLink.click(function() {
   return false;
 });
 
+$navLink.hover(
+  function() {
+    $navLink.addClass('hovered');
+    $(this).addClass('focused');
+  }, function() {
+    $navLink.removeClass('hovered');
+    $navLink.removeClass('focused');
+  }
+);
+
+
 $('.nav-design').click(function() {
-  $('#ajax').load('design.html');
+  $('#ajax').load('html/design.html');
+  /*
+  window.history.pushState('design', 'rgb /design', '/design');
+  return false;
+  */
 });
 $('.nav-photography').click(function() {
-  $('#ajax').load('photography.html');
+  $('#ajax').load('html/photography.html');
 });
 $('.nav-resume').click(function() {
-  $('#ajax').load('resume.html');
+  $('#ajax').load('html/resume.html');
 });
 $('.nav-about').click(function() {
-  $('#ajax').load('about.html');
+  $('#ajax').load('html/about.html');
 });
-
-
-
-// ajax page loading
-
-/*
-$('#design').load('design.html');
-$('#photography').load('photography.html');
-$('#resume').load('resume.html');
-$('#about').load('about.html');
-*/

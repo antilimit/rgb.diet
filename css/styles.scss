@@ -1,5 +1,5 @@
 $green: #CCEC6C;
-$red: #F64F00;
+$red: #AE5158;
 $blue: #5189C2;
 
 
@@ -20,7 +20,7 @@ a {
 }
 a:hover {
   text-decoration:none;
-  color:$red;
+  color:#000;
 }
 
 
@@ -41,7 +41,7 @@ a:hover {
     padding:0 5vw 0 0;
     line-height:1.2;
     a {
-      transition:all 0.5s ease;
+      transition:all 0.3s ease;
       font-size:2.5vw;
       display:block;
       text-align:right;
@@ -50,8 +50,20 @@ a:hover {
     a:hover {
 
     }
+    .hovered {
+      opacity:0.40;
+    }
+    .focused {
+      opacity:1;
+    }
+    .selected.hovered {
+      opacity:0.05 !important;
+      font-weight:200;
+      /* text-decoration:line-through; */
+    }
     .selected {
       font-weight:400;
+      cursor:default;
     }
   }
   header {
@@ -91,7 +103,7 @@ a:hover {
   .blocker-bottom {
     position:fixed;
     background:#fff;
-    height:1.5vw;
+    height:1.2vw;
     width:100%;
     display:block;
     transition:all 0.5s ease;
@@ -102,13 +114,27 @@ a:hover {
   .blocker-bottom {
     bottom:0;
   }
+  .back {
+    background:#fff;
+    padding:0.5em;
+    transform:scaleY(0.6);
+    position:fixed;
+    top:0;
+    right:1.2vw;
+    font-size:200%;
+  }
+
+  .wrapper {
+    padding:1.2vw 1.2vw 1.2vw 0;
+    position:relative;
+  }
+
   .list {
-    padding:1.5vw 1.5vw 1.5vw 0;
     transition:all 0.5s ease;
 
     .left-accent {
       position:absolute;
-      opacity:0.80;
+      opacity:1;
       height:100%;
       background:#fff;
       top:0;
@@ -166,7 +192,9 @@ a:hover {
 }
 
 #about {
-  
+  .video {
+    width:100%;
+  }
 }
 
 
