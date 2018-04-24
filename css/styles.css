@@ -20,7 +20,7 @@ a:hover {
   background: #fff;
   position: fixed;
   display: flex;
-  height: 100vh;
+  height: 100%;
   justify-content: flex-end;
   align-items: center;
   transition: all 0.3s ease; }
@@ -36,10 +36,11 @@ a:hover {
     .navigation nav .hovered {
       opacity: 0.40; }
     .navigation nav .focused {
-      opacity: 1; }
+      opacity: 1;
+      /* padding:0 0.05em 0 0; */ }
     .navigation nav .selected.hovered {
-      opacity: 0.05 !important;
-      font-weight: 200;
+      /* opacity:0.05 !important; */
+      /* font-weight:200; */
       /* text-decoration:line-through; */ }
     .navigation nav .selected {
       font-weight: 400;
@@ -57,12 +58,20 @@ a:hover {
     .navigation header .logo {
       font-size: 650%;
       letter-spacing: -0.19em; }
-      .navigation header .logo .green {
-        color: #CCEC6C; }
-      .navigation header .logo .red {
-        color: #AE5158; }
-      .navigation header .logo .blue {
-        color: #5189C2; }
+      .navigation header .logo span {
+        position: relative; }
+      .navigation header .logo .logo-g {
+        color: #F95000; }
+      .navigation header .logo .logo-b {
+        color: #4DE4A3;
+        top: -60px;
+        left: -13px;
+        font-size: 71%; }
+      .navigation header .logo .logo-r {
+        color: #4EA6FF;
+        position: relative;
+        top: -12px;
+        font-size: 100%; }
 
 .content {
   width: 65vw;

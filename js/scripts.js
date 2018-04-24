@@ -1,6 +1,5 @@
 
 // vars
-
 var $body = $('body');
 var $navLink = $('nav a');
 var $ajax = $('#ajax');
@@ -12,9 +11,7 @@ $ajax.load('html/design.html');
 
 
 
-
 // events
-
 $navLink.click(function() {
   $navLink.removeClass('selected');
   $(this).addClass('selected');
@@ -22,7 +19,6 @@ $navLink.click(function() {
   console.log('generic');
   return false;
 });
-
 $navLink.hover(
   function() {
     $navLink.addClass('hovered');
@@ -32,8 +28,6 @@ $navLink.hover(
     $navLink.removeClass('focused');
   }
 );
-
-
 $('.nav-design').click(function() {
   $ajax.load('html/design.html');
   console.log('specific');
@@ -55,6 +49,6 @@ $('.nav-resume').click(function() {
 });
 $('.nav-about').click(function() {
   $('#ajax').load('html/about.html');
-  console.log('specific');    
+  console.log('specific');
   return false;
 });

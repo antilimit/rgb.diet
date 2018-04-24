@@ -1,6 +1,6 @@
-$green: #CCEC6C;
-$red: #AE5158;
-$blue: #5189C2;
+$green: #4DE4A3;
+$red: #F95000;
+$blue: #4EA6FF;
 
 
 body {
@@ -32,7 +32,7 @@ a:hover {
   background:#fff;
   position:fixed;
   display:flex;
-  height:100vh;
+  height:100%;
   justify-content:flex-end;
   align-items:center;
   transition:all 0.3s ease;
@@ -55,10 +55,11 @@ a:hover {
     }
     .focused {
       opacity:1;
+      /* padding:0 0.05em 0 0; */
     }
     .selected.hovered {
-      opacity:0.05 !important;
-      font-weight:200;
+      /* opacity:0.05 !important; */
+      /* font-weight:200; */
       /* text-decoration:line-through; */
     }
     .selected {
@@ -80,9 +81,24 @@ a:hover {
     .logo {
       font-size:650%;
       letter-spacing:-0.19em;
-      .green { color:$green; }
-      .red { color:$red; }
-      .blue { color:$blue; }
+      span {
+        position: relative;
+      }
+      .logo-g {
+        color:$red;
+      }
+      .logo-b {
+        color:$green;
+        top: -60px;
+        left: -13px;
+        font-size: 71%;
+      }
+      .logo-r {
+        color:$blue;
+        position: relative;
+        top: -12px;
+        font-size: 100%;
+      }
     }
   }
 }
