@@ -27,6 +27,36 @@ a:hover {
 
 
 
+
+
+/* icons */
+
+
+i {
+  width:1.7em;
+  height:1.7em;
+  position:relative;
+  display:inline-block;
+  -webkit-mask-size:100%;
+  -webkit-mask-position:center;
+  -webkit-mask-repeat:no-repeat;
+  background-color:#000;
+  /* margin-left:-1px; */
+}
+i.icon-letter {
+  -webkit-mask-image:url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzIwMCcgd2lkdGg9JzIwMCcgIGZpbGw9IiMwMDAwMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZGF0YS1uYW1lPSJMYXllciAxIiB2aWV3Qm94PSIwIDAgOTggOTgiIHg9IjBweCIgeT0iMHB4Ij48dGl0bGU+MjE8L3RpdGxlPjxwYXRoIGQ9Ik04Myw3Mi41di00N0gxNXY0N1ptLTY2LTJWMzQuM0w0OSw1My43LDgxLDM0LjNWNzAuNVptNjQtNDN2NC40TDQ5LDUxLjMsMTcsMzEuOVYyNy41WiI+PC9wYXRoPjwvc3ZnPg==);
+}
+i.icon-phone {
+  -webkit-mask-image:url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzIwMCcgd2lkdGg9JzIwMCcgIGZpbGw9IiMwMDAwMDAiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC05NTIuMzYyMTgpIj48cGF0aCBzdHlsZT0idGV4dC1pbmRlbnQ6MDt0ZXh0LXRyYW5zZm9ybTpub25lO2RpcmVjdGlvbjpsdHI7YmxvY2stcHJvZ3Jlc3Npb246dGI7YmFzZWxpbmUtc2hpZnQ6YmFzZWxpbmU7Y29sb3I6IzAwMDAwMDtlbmFibGUtYmFja2dyb3VuZDphY2N1bXVsYXRlOyIgZD0ibSA2Nyw5NTcuMzYyMTYgYyAzLjg2MDcxLDAgNywzLjEzOTI5IDcsNyBsIDAsNzYuMDAwMDQgYyAwLDMuODYwNyAtMy4xMzkyOSw3IC03LDcgbCAtMzQsMCBjIC0zLjg2MDcxLDAgLTcsLTMuMTM5MyAtNywtNyBsIDAsLTc2LjAwMDA0IGMgMCwtMy44NjA3MSAzLjEzOTI5LC03IDcsLTcgbCAzNCwwIHogbSAwLDIgLTMuNzUsMCAtMi4yNSwzIC0yMiwwIC0yLjI1LC0zIC0zLjc1LDAgYyAtMi43ODczMSwwIC01LDIuMjEyNjkgLTUsNSBsIDAsNzYuMDAwMDQgYyAwLDIuNzg3MyAyLjIxMjY5LDUgNSw1IGwgMzQsMCBjIDIuNzg3MzEsMCA1LC0yLjIxMjcgNSwtNSBsIDAsLTc2LjAwMDA0IGMgMCwtMi43ODczMSAtMi4yMTI2OSwtNSAtNSwtNSB6IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZT0ibm9uZSIgbWFya2VyPSJub25lIiB2aXNpYmlsaXR5PSJ2aXNpYmxlIiBkaXNwbGF5PSJpbmxpbmUiIG92ZXJmbG93PSJ2aXNpYmxlIj48L3BhdGg+PC9nPjwvc3ZnPg==);
+}
+
+
+
+
+
+
+
+
 .navigation {
   width:35vw;
   background:#fff;
@@ -35,7 +65,7 @@ a:hover {
   height:100%;
   justify-content:flex-end;
   align-items:center;
-  transition:all 0.3s ease; 
+  transition:all 0.3s ease;
 
   nav {
     padding:0 5vw 0 0;
@@ -76,7 +106,10 @@ a:hover {
       padding:0;
       margin:0;
       letter-spacing:0.05em;
-      font-size:115%;
+      font-size:120%;
+    }
+    .contact {
+      font-size:90%;
     }
     .logo {
       font-size:650%;
@@ -119,7 +152,7 @@ a:hover {
   .blocker-bottom {
     position:fixed;
     background:#fff;
-    height:1.2vw;
+    height:3.2vw;
     width:100%;
     display:block;
     transition:all 0.5s ease;
@@ -138,10 +171,11 @@ a:hover {
     top:0;
     right:1.2vw;
     font-size:200%;
+    display:none;
   }
 
   .wrapper {
-    padding:1.2vw 1.2vw 1.2vw 0;
+    padding:3.3vw 3.2vw 3.2vw 0;
     position:relative;
   }
 
@@ -157,6 +191,7 @@ a:hover {
       left:0;
       width:0.3em;
       mix-blend-mode: difference;
+      display:none;
     }
 
     .row {
@@ -166,13 +201,14 @@ a:hover {
       transition:all 0.5s ease;
       display:flex;
       justify-content: flex-start;
-      align-items:flex-end;
+      align-items:center;
       background-position:right center;
       background-repeat:no-repeat;
       background-size:cover;
 
       .info {
-        padding:0 40% 1.2em 1.5em;
+        padding:0 60% 0 1.5em;
+        font-size:110%;
         h1 {
           font-size:130%;
           font-weight:400;
@@ -236,12 +272,17 @@ a:hover {
       height:0;
     }
     .list {
-      padding-right:0;
+      height:100vh;
+      overflow:hidden;
+      padding:0;
+
       .left-accent {
         display:none;
       }
       .row {
-        opacity:0;
+        /* opacity:0; */
+        overflow:hidden;
+        height:0;
       }
     }
   }
@@ -252,8 +293,10 @@ a:hover {
     .expanded-row {
       display:flex !important;
       opacity:1 !important;
-      height:70vw;
+      height:100vh !important;
       align-items:center;
+      z-index:100;
+
     }
   }
 
@@ -263,66 +306,85 @@ a:hover {
 
 
 
-
-#row-cube-moments {
+#row-24hf {
+  background-color:#D52B1E;
+  background-image:url(../img/24hf/hero.jpg);
+}
+#row-cubemoments {
   background-color:#7F0258;
   background-image:url(../img/cubemoments/hero.jpg);
 }
-#row-the-cube {
-  background-color:#e45d25;
-  background-image:url(../img/thecube/hero.jpg);
-}
-#row-your-trainer {
+#row-yourtrainer {
   background-color:#A4C4C9;
   background-image:url(../img/yourtrainer/hero.jpg);
 }
-#row-cave-digger {
-  background-color:#2B2116;
+#row-thecube {
+  background-color:#e45d25;
+  background-image:url(../img/thecube/hero.jpg);
 }
 #row-pigments {
   background-color:#F27B7A;
   background-image:url(../img/pigments/hero.jpg);
 }
-#row-high-school-cube {
-  background-color:#5C5F69;
-  background-image:url(../img/hsc/hero.jpg);
-}
-#row-idig-house {
+#row-idighouse {
   background-color:#D88500;
+  background-image:url(../img/idighouse/hero.jpg);
 }
 #row-auto {
   background-color:#4AAB9E;
+  background-image:url(../img/auto/hero.jpg);
 }
-#row-apartment-home-living {
+#row-ahl {
   background-color:#0070bf;
+  background-image:url(../img/ahl/hero.jpg);
 }
-#row-vector-art {
+#row-vectorart {
   background-color:#65A69C;
+  background-image:url(../img/vectorart/hero.jpg);
 }
-#row-antilmit {
+#row-antilimit {
   background-color:#000;
-}
-#row-facing-asia {
-  background-color:#BA731C;
+  background-image:url(../img/antilimit/hero.jpg);
 }
 #row-exotics {
   background-color:#F5E5D9;
+  background-image:url(../img/exotics/hero.jpg);
+}
+#row-dst {
+  background-color:#DDE3E1;
+  background-image:url(../img/dst/hero.jpg);
+}
+#row-invicible {
+  background-color:#F8934A;
+  background-image:url(../img/invicible/hero.jpg);
+}
+#row-downol {
+  background-color:#748195;
+  background-image:url(../img/daysofwar/hero.jpg);
+}
+
+
+/* unused */
+
+#row-cavedigger {
+  background-color:#2B2116;
+}
+#row-hsc {
+  background-color:#5C5F69;
+  background-image:url(../img/hsc/hero.jpg);
+}
+#row-facingasia {
+  background-color:#BA731C;
 }
 #row-mymedia {
   background-color:#909A7E;
 }
-#row-dst {
-  background-color:#DDE3E1;
-}
-#row-invicible {
-  background-color:#F8934A;
-}
 #row-vintage {
   background-color:#999999;
 }
-#row-days-of-war {
-  background-color:#748195;
-}
+
+
+
 
 
 

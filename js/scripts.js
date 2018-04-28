@@ -16,7 +16,6 @@ $navLink.click(function() {
   $navLink.removeClass('selected');
   $(this).addClass('selected');
   $body.removeClass('expanded-page');
-  console.log('generic');
   return false;
 });
 $navLink.hover(
@@ -34,7 +33,6 @@ $('.nav-design').click(function() {
   return false;
   /*
   window.history.pushState('design', 'rgb /design', '/design');
-  return false;
   */
 });
 $('.nav-photography').click(function() {
