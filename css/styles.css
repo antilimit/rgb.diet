@@ -16,7 +16,7 @@ a:hover {
   color: #000; }
 
 /* shared */
-.content .list .row, .content .article .hero {
+.content .list .row {
   color: #fff;
   position: relative;
   transition: all 0.5s ease;
@@ -26,14 +26,14 @@ a:hover {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; }
-  .content .list .row .info, .content .article .hero .info {
+  .content .list .row .info {
     padding: 0 60% 0 1.5em;
     font-size: 110%; }
-    .content .list .row .info h1, .content .article .hero .info h1 {
+    .content .list .row .info h1 {
       font-size: 130%;
       font-weight: 400;
       margin: 0; }
-    .content .list .row .info em, .content .article .hero .info em {
+    .content .list .row .info em {
       font-style: normal;
       font-size: 90%; }
 
@@ -140,7 +140,8 @@ i.icon-phone {
   .content .back {
     background: #fff;
     position: fixed;
-    top: 50px;
+    padding: 20px 0 10px 0;
+    top: 0px;
     left: 30vw;
     display: block;
     margin-top: -0.5em;
@@ -171,9 +172,6 @@ i.icon-phone {
   .content .article {
     display: flex;
     flex-flow: row wrap; }
-    .content .article .hero {
-      height: 100vh;
-      width: 100%; }
     .content .article section {
       width: 100%;
       position: relative;
@@ -207,7 +205,7 @@ i.icon-phone {
 .expanded-page .navigation {
   width: 30vw; }
   .expanded-page .navigation nav a {
-    font-size: 2.1vw; }
+    font-size: 2vw; }
 .expanded-page .content {
   left: 30vw;
   width: 70vw; }
@@ -217,7 +215,7 @@ i.icon-phone {
     padding: 0; }
   .expanded-page .content .back {
     width: 50px;
-    height: 50px; }
+    height: 90px; }
   .expanded-page .content .list {
     /*
     height:100vh;
