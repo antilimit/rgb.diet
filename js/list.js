@@ -7,7 +7,7 @@ var $row = $('.row');
 $( window ).scroll(function() {
   console.log($('.content').offset().top);
   console.log($('#ajax').offset().top);
-  console.log($('.wrapper').offset().top);  
+  console.log($('.wrapper').offset().top);
 
 
 });
@@ -33,7 +33,7 @@ $row.click(function(e) {
       setTimeout(function() {
         console.log(dis.offset());
         if (dis.offset().top < 1) {
-          alert('go niga');
+          alert('go mofo');
           // $('html, body').animate({ scrollTop: 100 }, 1500);
         }
       }, 2000);
