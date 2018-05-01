@@ -28,29 +28,7 @@ a:hover {
 /* shared */
 
 %row-shared {
-  color:#fff;
-  position:relative;
-  transition:all 0.5s ease;
-  display:flex;
-  justify-content: flex-start;
-  align-items:center;
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-size:cover;
 
-  .info {
-    padding:0 60% 0 1.5em;
-    font-size:110%;
-    h1 {
-      font-size:130%;
-      font-weight:400;
-      margin:0;
-    }
-    em {
-      font-style:normal;
-      font-size:90%;
-    }
-  }
 
 }
 
@@ -100,7 +78,8 @@ i.icon-phone {
 
   nav {
     padding:0 5vw 0 0;
-    line-height:1.2;
+    line-height:1.25;
+    transform-origin:right center;
     a {
       transition:all 0.3s ease;
       font-size:2.5vw;
@@ -239,7 +218,44 @@ i.icon-phone {
 
     .row {
       height:33vh;
-      @extend %row-shared;
+
+      color:#fff;
+      position:relative;
+      transition:all 0.5s ease;
+      display:flex;
+      justify-content: flex-start;
+      align-items:center;
+      background-position:center center;
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-color:rgba(0,0,0,0.03);
+
+      .info {
+        padding:0 60% 0 1.5em;
+        font-size:110%;
+        transition:scale 0.5s;
+        transform-origin:left center;
+
+        h1 {
+          font-size:130%;
+          font-weight:400;
+          margin:0;
+        }
+        em {
+          font-style:normal;
+          font-size:90%;
+        }
+        .tags {
+          display:none;
+          b {
+            background:#fff;
+            padding:0.1em;
+            color:#000;
+            display:block;
+            float:left;
+          }
+        }
+      }
 
     } /* row */
   } /* list */
@@ -314,7 +330,7 @@ i.icon-phone {
 
 }
 
-#photography {
+#photo {
 
 }
 
@@ -342,7 +358,8 @@ i.icon-phone {
     width:30vw;
     nav {
       a {
-        font-size:2vw;
+        transform:scale(0.70,0.75);
+        line-height:1;
       }
     }
   }
@@ -374,9 +391,18 @@ i.icon-phone {
         /* display:none; */
         /* height:0; */
       }
-    }
-  }
-}
+      .expanded-row {
+        .info {
+          transform:scale(1.5,1.5);
+
+          .tags {
+            display:block;
+          }
+        }
+      }
+    } /* list */
+  } /* content */
+} /* expaned-page */
 
 .hide-rows {
   .content {

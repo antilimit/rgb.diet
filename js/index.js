@@ -28,6 +28,7 @@ $navLink.hover(
 
 $('.nav-design').click(function(e) {
   tapNav();
+  $(this).addClass('selected');
   $ajax.load('html/design.html');
   e.preventDefault();
   /*
@@ -35,20 +36,23 @@ $('.nav-design').click(function(e) {
   */
 });
 
-$('.nav-photography').click(function(e) {
+$('.nav-photo').click(function(e) {
   tapNav();
-  $ajax.load('html/photography.html');
+  $(this).addClass('selected');
+  $ajax.load('html/photo.html');
   e.preventDefault();
 });
 
 $('.nav-resume').click(function(e) {
   tapNav();
+  $(this).addClass('selected');
   $ajax.load('html/resume.html');
   e.preventDefault();
 });
 
 $('.nav-about').click(function(e) {
   tapNav();
+  $(this).addClass('selected');
   $ajax.load('html/about.html');
   e.preventDefault();
 });
@@ -71,7 +75,6 @@ $back.click(function(e) {
 
 function tapNav() {
   $navLink.removeClass('selected');
-  $(this).addClass('selected');
   $body.removeClass('expanded-page');
   $body.removeClass('hide-rows');
 }
