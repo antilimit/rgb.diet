@@ -47,20 +47,21 @@ i.icon-phone {
   .navigation nav {
     padding: 0 5vw 0 0;
     line-height: 1.25;
-    transform-origin: right center; }
+    transform-origin: right center;
+    transition: all 0.3s ease; }
     .navigation nav a {
-      transition: all 0.3s ease;
       font-size: 2.5vw;
       display: block;
       text-align: right;
-      font-weight: 200; }
+      font-weight: 200;
+      transition: opacity 0.3s ease-out; }
     .navigation nav .hovered {
       opacity: 0.40; }
     .navigation nav .focused {
       opacity: 1;
       /* padding:0 0.05em 0 0; */ }
     .navigation nav .selected.hovered {
-      /* opacity:0.05 !important; */
+      opacity: 0.05 !important;
       /* font-weight:200; */
       /* text-decoration:line-through; */ }
     .navigation nav .selected {
@@ -104,7 +105,8 @@ i.icon-phone {
   transition: all 0.3s ease;
   /* list style pages */
   /* list */
-  /* article style pages */ }
+  /* article style pages */
+  /* article */ }
   .content .blocker-top,
   .content .blocker-bottom {
     position: fixed;
@@ -120,20 +122,21 @@ i.icon-phone {
   .content .back {
     background: #fff;
     position: fixed;
-    padding: 20px 0 10px 0;
-    top: 0px;
-    left: 30vw;
+    padding: 20px 0;
+    top: 50px;
+    left: 36vw;
     display: block;
-    margin-top: -0.5em;
     font-size: 200%;
     z-index: 20;
-    transition: all 1s;
+    transition: all 0.5s ease-out;
     width: 0;
     overflow: hidden;
-    height: 0; }
+    opacity: 0; }
   .content .wrapper {
     padding: 50px 50px 50px 0;
-    position: relative; }
+    position: relative;
+    background: #fff !important;
+    /* overrides custom colors */ }
   .content .list {
     transition: all 0.5s ease;
     /* row */ }
@@ -148,7 +151,7 @@ i.icon-phone {
       mix-blend-mode: difference;
       display: none; }
     .content .list .row {
-      height: 33vh;
+      height: 25vh;
       color: #fff;
       position: relative;
       transition: all 0.5s ease;
@@ -160,54 +163,74 @@ i.icon-phone {
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.03); }
       .content .list .row .info {
-        padding: 0 60% 0 1.5em;
+        padding: 0 72% 0 2em;
         font-size: 110%;
-        transition: scale 0.5s;
-        transform-origin: left center; }
+        transform-origin: left center;
+        line-height: 1.2; }
         .content .list .row .info h1 {
           font-size: 130%;
           font-weight: 400;
-          margin: 0; }
+          margin: 0;
+          padding: 0 0 0.3em 0;
+          transition: font-size 0.5s ease-out; }
         .content .list .row .info em {
           font-style: normal;
           font-size: 90%; }
         .content .list .row .info .tags {
-          display: none; }
+          display: none;
+          padding: 1em 0 0 0; }
           .content .list .row .info .tags b {
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.1em 0.2em 0.15em;
+            display: inline-block;
+            margin: 0 0 0.15em 0;
+            color: #999;
+            font-weight: 400;
+            line-height: 1;
+            font-size: 95%; }
+          .content .list .row .info .tags .primary {
             background: #fff;
-            padding: 0.1em;
-            color: #000;
-            display: block;
-            float: left; }
-  .content .article {
-    display: flex;
-    flex-flow: row wrap; }
-    .content .article section {
+            font-weight: 600; }
+  .content .article .masonry {
+    margin: 1.5em 0;
+    padding: 0;
+    column-gap: 0;
+    column-count: 3;
+    /* does auto-media queries */
+    column-width: 20em; }
+    .content .article .masonry .item {
+      display: inline-block;
+      padding: 1.5em 1.5em 1.5em 1.5em;
+      margin: 0 0 0 -1.5em;
       width: 100%;
-      position: relative;
-      background: purple; }
-      .content .article section img {
+      box-sizing: border-box; }
+      .content .article .masonry .item img {
         display: block;
-        width: 100%; }
-      .content .article section p {
-        margin: 3vw 3vw 0 3vw; }
-    .content .article .s-75 {
-      width: 75%;
-      background: red; }
-    .content .article .s-66 {
-      width: 66.66666%;
-      background: orange; }
-    .content .article .s-50 {
-      width: 50%;
-      background: yellow; }
-    .content .article .s-33 {
-      width: 33.33333%;
-      background: green; }
-    .content .article .s-25 {
-      width: 25%;
-      background: blue; }
+        width: 100%;
+        height: auto; }
+      .content .article .masonry .item p {
+        padding: 0 2em 2em 0;
+        -webkit-column-break-inside: avoid;
+        /* Chrome, Safari */
+        page-break-inside: avoid;
+        /* Theoretically FF 20+ */
+        break-inside: avoid-column;
+        /* IE 11 */ }
+  .content .article .col-4 {
+    column-count: 4; }
+  .content .article .col-3 {
+    column-count: 3; }
+  .content .article .col-2 {
+    column-count: 2; }
+  .content .article .col-1 {
+    column-count: 1; }
 
+/* content */
 /* overrides */
+#photo .row .info {
+  color: #000; }
+
 #about .video {
   width: 100%; }
 
@@ -216,9 +239,11 @@ i.icon-phone {
   /* content */ }
   .expanded-page .navigation {
     width: 30vw; }
-    .expanded-page .navigation nav a {
-      transform: scale(0.7, 0.75);
-      line-height: 1; }
+    .expanded-page .navigation nav {
+      transform: scale(0.75, 0.75); }
+      .expanded-page .navigation nav .selected.hovered {
+        opacity: 1 !important;
+        cursor: pointer !important; }
   .expanded-page .content {
     left: 30vw;
     width: 70vw;
@@ -229,7 +254,8 @@ i.icon-phone {
       padding: 0; }
     .expanded-page .content .back {
       width: 50px;
-      height: 90px; }
+      opacity: 1;
+      left: 27.75vw; }
     .expanded-page .content .list {
       /*
       height:100vh;
@@ -243,7 +269,13 @@ i.icon-phone {
         /* display:none; */
         /* height:0; */ }
       .expanded-page .content .list .expanded-row .info {
-        transform: scale(1.5, 1.5); }
+        padding-right: 55%; }
+        .expanded-page .content .list .expanded-row .info h1 {
+          font-size: 300%; }
+        .expanded-page .content .list .expanded-row .info em {
+          font-style: normal;
+          font-size: 100%;
+          line-height: 1.6; }
         .expanded-page .content .list .expanded-row .info .tags {
           display: block; }
 
@@ -261,60 +293,134 @@ body .content .list .expanded-row {
   /* top:0 !important; */ }
 
 #row-24hf {
-  background-color: #D52B1E;
-  background-image: url(../img/24hf/hero.jpg); }
+  background-color: #314360;
+  background-image: url(../img/design/24hf/hero.jpg); }
+  #row-24hf .tags b {
+    color: #314360; }
+
+#24hf {
+  backround-color: #D52B1E; }
 
 #row-cubemoments {
   background-color: #7F0258;
-  background-image: url(../img/cubemoments/hero.jpg); }
+  background-image: url(../img/design/cubemoments/hero.jpg); }
+  #row-cubemoments .tags b {
+    color: #7F0258; }
+
+#cubemoments {
+  background-color: #7F0258; }
 
 #row-yourtrainer {
   background-color: #A4C4C9;
-  background-image: url(../img/yourtrainer/hero.jpg); }
+  background-image: url(../img/design/yourtrainer/hero.jpg); }
+  #row-yourtrainer .info h1, #row-yourtrainer .info em {
+    color: #000; }
+  #row-yourtrainer .tags b {
+    color: #A4C4C9; }
+
+#row-yourtrainer {
+  background-color: #A4C4C9; }
 
 #row-thecube {
   background-color: #e45d25;
-  background-image: url(../img/thecube/hero.jpg); }
+  background-image: url(../img/design/thecube/hero.jpg); }
+  #row-thecube .tags b {
+    color: #e45d25; }
+
+#thecube {
+  background-color: #e45d25; }
 
 #row-pigments {
   background-color: #F27B7A;
-  background-image: url(../img/pigments/hero.jpg); }
+  background-image: url(../img/design/pigments/hero.jpg); }
+  #row-pigments .tags b {
+    color: #F27B7A; }
+
+#pigments {
+  background-color: #F27B7A; }
 
 #row-idighouse {
   background-color: #D88500;
-  background-image: url(../img/idighouse/hero.jpg); }
+  background-image: url(../img/design/idighouse/hero.jpg); }
+  #row-idighouse .tags b {
+    color: #D88500; }
+
+#idighouse {
+  background-color: #D88500; }
 
 #row-auto {
   background-color: #4AAB9E;
-  background-image: url(../img/auto/hero.jpg); }
+  background-image: url(../img/design/auto/hero.jpg); }
+  #row-auto .tags b {
+    color: #4AAB9E; }
+
+#auto {
+  background-color: #4AAB9E; }
 
 #row-ahl {
   background-color: #0070bf;
-  background-image: url(../img/ahl/hero.jpg); }
+  background-image: url(../img/design/ahl/hero.jpg); }
+  #row-ahl .tags b {
+    color: #0070bf; }
+
+#ahl {
+  background-color: #0070bf; }
 
 #row-vectorart {
   background-color: #65A69C;
-  background-image: url(../img/vectorart/hero.jpg); }
+  background-image: url(../img/design/vectorart/hero.jpg); }
+  #row-vectorart .tags b {
+    color: #65A69C; }
+
+#vectorart {
+  background-color: #65A69C; }
 
 #row-antilimit {
   background-color: #000;
-  background-image: url(../img/antilimit/hero.jpg); }
+  background-image: url(../img/design/antilimit/hero.jpg); }
+  #row-antilimit .tags b {
+    color: #000; }
+
+#antilimit {
+  background-color: #000; }
 
 #row-exotics {
   background-color: #F5E5D9;
-  background-image: url(../img/exotics/hero.jpg); }
+  background-image: url(../img/design/exotics/hero.jpg); }
+  #row-exotics .tags b {
+    color: #F5E5D9; }
+  #row-exotics .info h1, #row-exotics .info em {
+    color: #000; }
+
+#exotics {
+  background-color: #F5E5D9; }
 
 #row-dst {
   background-color: #DDE3E1;
-  background-image: url(../img/dst/hero.jpg); }
+  background-image: url(../img/design/dst/hero.jpg); }
+  #row-dst .tags b {
+    color: #DDE3E1; }
+
+#dst {
+  background-color: #DDE3E1; }
 
 #row-invicible {
   background-color: #F8934A;
-  background-image: url(../img/invicible/hero.jpg); }
+  background-image: url(../img/design/invicible/hero.jpg); }
+  #row-invicible .tags b {
+    color: #F8934A; }
+
+#invicible {
+  background-color: #F8934A; }
 
 #row-downol {
   background-color: #748195;
-  background-image: url(../img/daysofwar/hero.jpg); }
+  background-image: url(../img/design/daysofwar/hero.jpg); }
+  #row-downol .tags b {
+    color: #748195; }
+
+#downol {
+  background-color: #748195; }
 
 /* unused */
 #row-cavedigger {
@@ -322,7 +428,7 @@ body .content .list .expanded-row {
 
 #row-hsc {
   background-color: #5C5F69;
-  background-image: url(../img/hsc/hero.jpg); }
+  background-image: url(../img/design/hsc/hero.jpg); }
 
 #row-facingasia {
   background-color: #BA731C; }

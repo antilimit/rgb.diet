@@ -13,6 +13,13 @@ $row.click(function(e) {
 
   if ($body.hasClass('expanded-page')) {
     // expanding
+
+    /*
+    history.pushState({
+        id: 'homepage'
+    }, 'rgb / ' + rowID, '/temp/new/' + sectionID + '/' + rowID );
+    */
+
     $('html, body').animate({ scrollTop: ($(this).offset().top - 52) }, 300);
     setTimeout(function(){
       var div = $('<div id="ajax-article" />');
@@ -25,9 +32,9 @@ $row.click(function(e) {
       // show them there's more to see
       setTimeout(function() {
         if (window.pageYOffset < 1 && $body.hasClass('expanded-page')) {
-          $('html, body').animate({ scrollTop: 30 }, 500);
+          $('html, body').animate({ scrollTop: 50 }, 1000);
         }
-      }, 2500);
+      }, 2000);
     }, 500);
 
   } else {
@@ -35,6 +42,13 @@ $row.click(function(e) {
     $('#ajax-article').remove();
     $body.removeClass('hide-rows');
     $('html, body').animate({ scrollTop: ($(this).offset().top - 0) }, 0);
+
+    /*
+    history.pushState({
+        id: 'homepage'
+    }, 'rgb / ' + sectionID, '/temp/new/' + sectionID );
+    */
+
   }
 
   $(this).toggleClass('expanded-row');

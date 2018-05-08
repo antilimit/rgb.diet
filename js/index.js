@@ -11,7 +11,11 @@ var $back = $('.back');
 // onload
 
 $ajax.load('html/design.html');
-
+/*
+history.pushState({
+    id: 'homepage'
+}, 'rgb / design', '/temp/new/design');
+*/
 
 
 // navigation events
