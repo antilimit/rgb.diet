@@ -286,7 +286,7 @@ i.icon-phone {
 body .content .list .expanded-row {
   display: flex !important;
   opacity: 1;
-  height: 100vh;
+  height: 85vh;
   align-items: center;
   z-index: 15;
   position: relative;

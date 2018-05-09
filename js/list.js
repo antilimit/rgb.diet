@@ -30,11 +30,14 @@ $row.click(function(e) {
 
       // if they haven't scrolled down after a few seconds
       // show them there's more to see
+      // little buggy
+      /*
       setTimeout(function() {
         if (window.pageYOffset < 1 && $body.hasClass('expanded-page')) {
           $('html, body').animate({ scrollTop: 50 }, 1000);
         }
       }, 2000);
+      */
     }, 500);
 
   } else {
