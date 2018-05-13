@@ -3,6 +3,7 @@
 var i = 1;
 var loc = "thailand";
 var count_thailand = 27;
+// add counts for rest of photo sections
 
 // onload
 

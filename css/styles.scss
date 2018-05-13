@@ -253,6 +253,7 @@ i.icon-phone {
         .tags {
           display:none;
           padding:1em 0 0 0;
+          mix-blend-mode:screen;
 
           b {
             text-transform:uppercase;
@@ -260,7 +261,7 @@ i.icon-phone {
             padding:0.15em 0.25em 0.30em 0.25em;
             display:inline-block;
             margin:0 0 0.20em 0;
-            color:#999;
+            color:#000;
             font-weight:400;
             line-height:1;
             font-size:95%
@@ -273,6 +274,18 @@ i.icon-phone {
       }
 
     } /* row */
+
+    .dark-row {
+      .info {
+        h1, em {
+          color:#000;
+        }
+        .tags {
+          mix-blend-mode:difference;
+        }
+      }
+    }
+
   } /* list */
 
 
@@ -348,9 +361,20 @@ i.icon-phone {
 #photo {
   .row {
     .info {
-      color:#000;
-      h1 {
+      flex-direction:row;
 
+      h1 {
+        background:#fff;
+        padding:0.15em 0.25em 0.30em 0.25em;
+        color:#000;
+        line-height:1;
+      }
+      em {
+        display:inline-block;
+        line-height:1;
+        background:#000;
+        color:#fff;
+        padding:0.20em 0.45em 0.30em 0.40em;
       }
     }
   }
@@ -476,12 +500,13 @@ body {
 
 
 
+/* design rows */
+
 
 
 #row-24hf {
   background-color:#314360;
   background-image:url(../img/design/24hf/hero.jpg);
-  .tags b { color:#314360; }
 }
 #24hf {
   backround-color:#D52B1E;
@@ -490,7 +515,6 @@ body {
 #row-cubemoments {
   background-color:#7F0258;
   background-image:url(../img/design/cubemoments/hero.jpg);
-  .tags b { color:#7F0258; }
 }
 #cubemoments {
   background-color:#7F0258;
@@ -504,7 +528,6 @@ body {
       color:#000;
     }
   }
-  .tags b { color:#A4C4C9; }
 }
 #row-yourtrainer {
   background-color:#A4C4C9;
@@ -513,7 +536,6 @@ body {
 #row-thecube {
   background-color:#e45d25;
   background-image:url(../img/design/thecube/hero.jpg);
-  .tags b { color:#e45d25; }
 }
 #thecube {
   background-color:#e45d25;
@@ -522,7 +544,6 @@ body {
 #row-pigments {
   background-color:#F27B7A;
   background-image:url(../img/design/pigments/hero.jpg);
-  .tags b { color:#F27B7A; }
 }
 #pigments {
   background-color:#F27B7A;
@@ -531,7 +552,6 @@ body {
 #row-idighouse {
   background-color:#D88500;
   background-image:url(../img/design/idighouse/hero.jpg);
-  .tags b { color:#D88500; }
 }
 #idighouse {
   background-color:#D88500;
@@ -540,7 +560,6 @@ body {
 #row-auto {
   background-color:#4AAB9E;
   background-image:url(../img/design/auto/hero.jpg);
-  .tags b { color:#4AAB9E; }
 }
 #auto {
   background-color:#4AAB9E;
@@ -549,7 +568,6 @@ body {
 #row-ahl {
   background-color:#0070bf;
   background-image:url(../img/design/ahl/hero.jpg);
-  .tags b { color:#0070bf; }
 }
 #ahl {
   background-color:#0070bf;
@@ -558,7 +576,6 @@ body {
 #row-vectorart {
   background-color:#65A69C;
   background-image:url(../img/design/vectorart/hero.jpg);
-  .tags b { color:#65A69C; }
 }
 #vectorart {
   background-color:#65A69C;
@@ -567,7 +584,6 @@ body {
 #row-antilimit {
   background-color:#000;
   background-image:url(../img/design/antilimit/hero.jpg);
-  .tags b { color:#000; }
 }
 #antilimit {
   background-color:#000;
@@ -576,12 +592,6 @@ body {
 #row-exotics {
   background-color:#F5E5D9;
   background-image:url(../img/design/exotics/hero.jpg);
-  .tags b { color:#F5E5D9; }
-  .info {
-    h1, em {
-      color:#000;
-    }
-  }
 }
 #exotics {
   background-color:#F5E5D9;
@@ -590,7 +600,6 @@ body {
 #row-dst {
   background-color:#DDE3E1;
   background-image:url(../img/design/dst/hero.jpg);
-  .tags b { color:#DDE3E1; }
 }
 #dst {
   background-color:#DDE3E1;
@@ -599,7 +608,6 @@ body {
 #row-invicible {
   background-color:#F8934A;
   background-image:url(../img/design/invicible/hero.jpg);
-  .tags b { color:#F8934A; }
 }
 #invicible {
   background-color:#F8934A;
@@ -608,7 +616,6 @@ body {
 #row-downol {
   background-color:#748195;
   background-image:url(../img/design/daysofwar/hero.jpg);
-  .tags b { color:#748195; }
 }
 #downol {
   background-color:#748195;
@@ -632,6 +639,100 @@ body {
 }
 #row-vintage {
   background-color:#999999;
+}
+
+
+
+
+/* photo rows */
+
+
+#row-amsterdam {
+  background-image:url(../img/photo/amsterdam/hero.jpg);
+}
+#row-austin {
+  background-image:url(../img/photo/austin/hero.jpg);
+}
+#row-barcelona {
+  background-image:url(../img/photo/barcelona/hero.jpg);
+}
+#row-bigbend {
+  background-image:url(../img/photo/bigbend/hero.jpg);
+}
+#row-cambodia {
+  background-image:url(../img/photo/cambodia/hero.jpg);
+}
+#row-chicago {
+  background-image:url(../img/photo/chicago/hero.jpg);
+}
+#row-copenhagen {
+  background-image:url(../img/photo/copenhagen/hero.jpg);
+}
+#row-dallas {
+  background-image:url(../img/photo/dallas/hero.jpg);
+}
+#row-florida {
+  background-image:url(../img/photo/florida/hero.jpg);
+}
+#row-hawaii {
+  background-image:url(../img/photo/hawaii/hero.jpg);
+}
+#row-houston {
+  background-image:url(../img/photo/houston/hero.jpg);
+}
+#row-japan {
+  background-image:url(../img/photo/japan/hero.jpg);
+}
+#row-lasvegas {
+  background-image:url(../img/photo/lasvegas/hero.jpg);
+}
+#row-london {
+  background-image:url(../img/photo/london/hero.jpg);
+}
+#row-madrid {
+  background-image:url(../img/photo/madrid/hero.jpg);
+}
+#row-malaysia {
+  background-image:url(../img/photo/malaysia/hero.jpg);
+}
+#row-newmexico {
+  background-image:url(../img/photo/newmexico/hero.jpg);
+}
+#row-newyork {
+  background-image:url(../img/photo/newyork/hero.jpg);
+}
+#row-paris {
+  background-image:url(../img/photo/paris/hero.jpg);
+}
+#row-puertorico {
+  background-image:url(../img/photo/puertorico/hero.jpg);
+}
+#row-sanantonio {
+  background-image:url(../img/photo/sanantonio/hero.jpg);
+}
+#row-sanfrancisco {
+  background-image:url(../img/photo/sanfrancisco/hero.jpg);
+}
+#row-santodomingo {
+  background-image:url(../img/photo/santodomingo/hero.jpg);
+}
+#row-seattle {
+  background-image:url(../img/photo/seattle/hero.jpg);
+}
+#row-singapore {
+  background-image:url(../img/photo/singapore/hero.jpg);
+}
+#row-stlouis {
+  background-image:url(../img/photo/stlouis/hero.jpg);
+}
+#row-switzerland {
+  background-image:url(../img/photo/switzerland/hero.jpg);
+}
+#row-thailand {
+  background-image:url(../img/photo/thailand/hero.jpg);
+}
+#row-yellowstone {
+  background-image:url(../img/photo/yellowstone/hero.jpg);
 }
 
 
