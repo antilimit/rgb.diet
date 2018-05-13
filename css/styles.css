@@ -161,7 +161,8 @@ i.icon-phone {
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      background-color: rgba(0, 0, 0, 0.03); }
+      background-color: rgba(0, 0, 0, 0.03);
+      transform-origin: center; }
       .content .list .row .info {
         padding: 0 72% 0 2em;
         font-size: 110%;
@@ -233,19 +234,28 @@ i.icon-phone {
 
 /* content */
 /* overrides */
-#photo .row .info {
-  flex-direction: row; }
-  #photo .row .info h1 {
-    background: #fff;
-    padding: 0.15em 0.25em 0.30em 0.25em;
-    color: #000;
-    line-height: 1; }
-  #photo .row .info em {
-    display: inline-block;
-    line-height: 1;
-    background: #000;
-    color: #fff;
-    padding: 0.20em 0.45em 0.30em 0.40em; }
+#design {
+  padding-right: 15vw; }
+
+#photo {
+  padding-right: 20vw; }
+  #photo .row {
+    background-position: center center;
+    height: 30vh;
+    margin-bottom: 0.2em; }
+    #photo .row .info {
+      flex-direction: row; }
+      #photo .row .info h1 {
+        background: #fff;
+        padding: 0.15em 0.25em 0.30em 0.25em;
+        color: #000;
+        line-height: 1; }
+      #photo .row .info em {
+        display: inline-block;
+        line-height: 1;
+        background: #000;
+        color: #fff;
+        padding: 0.20em 0.45em 0.30em 0.40em; }
 
 #about .video {
   width: 100%; }
@@ -294,6 +304,12 @@ i.icon-phone {
           line-height: 1.6; }
         .expanded-page .content .list .expanded-row .info .tags {
           display: block; }
+    .expanded-page .content #photo {
+      padding-right: 0; }
+      .expanded-page .content #photo .row {
+        /* height:100vh; */ }
+    .expanded-page .content #design {
+      padding-right: 0; }
 
 /* expaned-page */
 .hide-rows .content .list .row {
@@ -302,7 +318,7 @@ i.icon-phone {
 body .content .list .expanded-row {
   display: flex !important;
   opacity: 1;
-  height: 100vh;
+  height: 100vh !important;
   align-items: center;
   z-index: 15;
   position: relative;

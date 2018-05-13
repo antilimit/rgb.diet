@@ -232,6 +232,7 @@ i.icon-phone {
       background-repeat:no-repeat;
       background-size:cover;
       background-color:rgba(0,0,0,0.03);
+      transform-origin:center;
 
       .info {
         padding:0 72% 0 2em;
@@ -355,11 +356,17 @@ i.icon-phone {
 
 
 #design {
-
+  padding-right:15vw;
 }
 
 #photo {
+  padding-right:20vw;
+
   .row {
+    background-position:center center;
+    height:30vh;
+    margin-bottom:0.2em;
+
     .info {
       flex-direction:row;
 
@@ -464,6 +471,18 @@ i.icon-phone {
         }
       }
     } /* list */
+
+    #photo {
+      padding-right:0;
+      .row {
+        /* height:100vh; */
+      }
+    }
+
+    #design {
+      padding-right:0;
+    }
+
   } /* content */
 } /* expaned-page */
 
@@ -484,7 +503,7 @@ body {
       .expanded-row {
         display:flex !important;
         opacity:1;
-        height:100vh;
+        height:100vh !important;
         align-items:center;
         z-index:15;
         position:relative;
