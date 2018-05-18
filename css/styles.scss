@@ -1,6 +1,16 @@
+/* colors */
+
 $green: #4DE4A3;
 $red: #F95000;
 $blue: #4EA6FF;
+
+/* sizes */
+
+$left-width-expanded: 25vw;
+$left-width:35vw;
+$right-width-expanded: 75vw;
+
+
 
 
 body {
@@ -67,7 +77,7 @@ i.icon-phone {
 
 
 .navigation {
-  width:35vw;
+  width:$left-width;
   background:#fff;
   position:fixed;
   display:flex;
@@ -159,7 +169,7 @@ i.icon-phone {
 .content {
   width:65vw;
   position:absolute;
-  left:35vw;
+  left:$left-width;
   transition:all 0.3s ease;
 
   .blocker-top,
@@ -387,7 +397,7 @@ i.icon-phone {
 }
 
 #photo {
-  padding-right:20vw;
+  /* padding-right:20vw; */
 
   .row {
     background-position:center center;
@@ -433,7 +443,7 @@ i.icon-phone {
     height:100%;
     background-size:cover;
     display:block;
-    
+
   }
 }
 
@@ -448,7 +458,7 @@ i.icon-phone {
 
 .expanded-page {
   .navigation {
-    width:30vw;
+    width:$left-width-expanded;
     nav {
       transform:scale(0.75,0.75);
       a {
@@ -461,8 +471,9 @@ i.icon-phone {
     }
   }
   .content {
-    left:30vw;
-    width:70vw;
+    left:$left-width-expanded;
+    width:$right-width-expanded;
+
     .blocker-top, .blocker-bottom {
       height:0;
     }
@@ -472,7 +483,7 @@ i.icon-phone {
     .back {
       width:50px;
       opacity:1;
-      left:30vw;
+      left:$left-width-expanded;
       margin-left:-40px;
     }
     .list {

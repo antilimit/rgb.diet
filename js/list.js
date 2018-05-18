@@ -12,7 +12,7 @@ row.click(function(e) {
   $body.toggleClass('expanded-page');
 
   rowID = $(this).attr('id').replace('row-', '');
-  photoCount = $(this).find('em').html();
+  photoCount = $(this).find('.count').html();
   photoCountInt = parseInt(photoCount) + 1;
 
   dis = $(this);
@@ -51,6 +51,7 @@ row.click(function(e) {
     }, 500);
 
   } else {
+    
     // going back to normal
     $('#ajax-article').remove();
     $body.removeClass('hide-rows');

@@ -1,3 +1,5 @@
+/* colors */
+/* sizes */
 body {
   /* font-family: 'proxima_nova_ltthin', sans-serif; */
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -263,7 +265,7 @@ i.icon-phone {
   padding-right: 50px; }
 
 #photo {
-  padding-right: 20vw; }
+  /* padding-right:20vw; */ }
   #photo .row {
     background-position: center center;
     height: 15vh;
@@ -301,15 +303,15 @@ i.icon-phone {
 .expanded-page {
   /* content */ }
   .expanded-page .navigation {
-    width: 30vw; }
+    width: 25vw; }
     .expanded-page .navigation nav {
       transform: scale(0.75, 0.75); }
       .expanded-page .navigation nav .selected.hovered {
         opacity: 1 !important;
         cursor: pointer !important; }
   .expanded-page .content {
-    left: 30vw;
-    width: 70vw;
+    left: 25vw;
+    width: 75vw;
     /* list */ }
     .expanded-page .content .blocker-top, .expanded-page .content .blocker-bottom {
       height: 0; }
@@ -318,7 +320,7 @@ i.icon-phone {
     .expanded-page .content .back {
       width: 50px;
       opacity: 1;
-      left: 30vw;
+      left: 25vw;
       margin-left: -40px; }
     .expanded-page .content .list {
       /*
