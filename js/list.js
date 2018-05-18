@@ -1,15 +1,21 @@
 // vars
 
-var $row = $('.row');
+var row = $('.row');
+var sectionID = $('.wrapper').attr('id');
+var rowID;
+var dis;
+var photoCount;
 
 // events
 
-$row.click(function(e) {
+row.click(function(e) {
   $body.toggleClass('expanded-page');
 
-  var rowID = $(this).attr('id').replace('row-', '');
-  var sectionID = $('.wrapper').attr('id');
-  var dis = $(this);
+  rowID = $(this).attr('id').replace('row-', '');
+  photoCount = $(this).find('em').html();
+  photoCountInt = parseInt(photoCount) + 1;
+
+  dis = $(this);
 
   if ($body.hasClass('expanded-page')) {
     // expanding
@@ -23,7 +29,11 @@ $row.click(function(e) {
     $('html, body').animate({ scrollTop: ($(this).offset().top - 52) }, 300);
     setTimeout(function(){
       var div = $('<div id="ajax-article" />');
-      div.load('html/' + sectionID + '/' + rowID + '.html');
+      if (sectionID == 'design') {
+        div.load('html/design/' + rowID + '.html');
+      } else {
+        div.load('html/photo/index.html');
+      }
       dis.after(div);
       $body.addClass('hide-rows');
       $('html, body').animate({ scrollTop: 0 }, 0);
