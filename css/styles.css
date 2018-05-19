@@ -163,20 +163,23 @@ i.icon-phone {
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      transition: all 0.2s ease-out;
+      transition: all 0.3s ease-out;
       mix-blend-mode: normal;
+      transform: scale(1.04, 1.04);
       /* filter:brightness(1);*/ }
-    .content .list .row:hover:after {
+    .content .list .row:hover::after {
       /* filter:brightness(1.1); */
       /* hard light or lumionsoity */
       /* mix-blend-mode:hard-light; */
-      box-shadow: inset 0 0 0 0.3em #fff;
+      box-shadow: inset 0 0 0 0.75em #fff;
+      transform: scale(1, 1);
       /* left/right
       box-shadow: inset 30px 0 0 -10px #fff, inset -30px 0 0 -10px #fff;
       */ }
     .content .list .row {
       height: 25vh;
       color: #fff;
+      overflow: hidden;
       position: relative;
       transition: all 0.5s ease;
       display: flex;
@@ -219,6 +222,8 @@ i.icon-phone {
           .content .list .row .info .tags .primary {
             background: #fff;
             font-weight: 600; }
+    .content .list .row:hover {
+      height: 30vh; }
     .content .list .dark-row .info {
       mix-blend-mode: normal !important; }
       .content .list .dark-row .info h1, .content .list .dark-row .info em {
@@ -226,38 +231,43 @@ i.icon-phone {
       .content .list .dark-row .info .tags {
         mix-blend-mode: difference; }
   .content .article .masonry {
-    margin: 1.5em 0;
-    padding: 0;
+    column-count: 1;
     column-gap: 0;
-    column-count: 3;
-    /* does auto-media queries */
-    column-width: 20em; }
+    counter-reset: item-counter;
+    /* set column-count in MQs */
+    /*
+    .expanded-item {
+      width: 75vw;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition:0.3s width ease-out;
+      opacity:1 !important;
+    }
+    */ }
     .content .article .masonry .item {
-      display: inline-block;
-      padding: 1.5em 1.5em 1.5em 1.5em;
-      margin: 0 0 0 -1.5em;
+      box-sizing: border-box;
+      break-inside: avoid;
+      counter-increment: item-counter;
       width: 100%;
-      box-sizing: border-box; }
+      padding: 2em 2em 0 0;
+      display: block; }
       .content .article .masonry .item img {
         display: block;
-        width: 100%;
-        height: auto; }
-      .content .article .masonry .item p {
-        padding: 0 2em 2em 0;
-        -webkit-column-break-inside: avoid;
-        /* Chrome, Safari */
-        page-break-inside: avoid;
-        /* Theoretically FF 20+ */
-        break-inside: avoid-column;
-        /* IE 11 */ }
-  .content .article .col-4 {
-    column-count: 4; }
-  .content .article .col-3 {
-    column-count: 3; }
-  .content .article .col-2 {
-    column-count: 2; }
+        width: 100%; }
+  .content .article .no-border .item {
+    padding: 0; }
   .content .article .col-1 {
     column-count: 1; }
+  .content .article .col-2 {
+    column-count: 2; }
+  .content .article .col-3 {
+    column-count: 3; }
+  .content .article .col-4 {
+    column-count: 4; }
+  .content .article .zoomed {
+    column-count: 1 !important; }
 
 /* content */
 /* overrides */
@@ -265,12 +275,27 @@ i.icon-phone {
   padding-right: 50px; }
 
 #photo {
-  /* padding-right:20vw; */ }
+  /* padding-right:20vw; */
+  /* row */ }
+  #photo .article .masonry .item {
+    position: relative; }
+    #photo .article .masonry .item img {
+      display: block; }
+    #photo .article .masonry .item .year {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: #000;
+      background: #fff;
+      padding: 0.1em 0.45em 0 0;
+      font-size: 175%;
+      display: block; }
   #photo .row {
     background-position: center center;
     height: 15vh;
     margin-bottom: 0.3em;
-    background-color: #000; }
+    background-color: #000;
+    /* info */ }
     #photo .row .info {
       flex-direction: row;
       display: flex;
@@ -290,6 +315,8 @@ i.icon-phone {
         background: rgba(255, 255, 255, 0.8);
         color: #000;
         padding: 0.15em 0.2em 0.25em 0.20em; }
+  #photo .expanded-row .info em {
+    /* display:none; */ }
 
 #about {
   height: 100vh; }
@@ -338,14 +365,15 @@ i.icon-phone {
         /* filter:brightness(1); */
         /* hard light or lumionsoity */
         /* mix-blend-mode:hard-light; */
-        box-shadow: none; }
+        box-shadow: none;
+        transform: scale(1.04, 1.04) !important; }
       .expanded-page .content .list .expanded-row {
         margin: 0 !important; }
         .expanded-page .content .list .expanded-row .info {
           padding-right: 55%;
           mix-blend-mode: screen; }
           .expanded-page .content .list .expanded-row .info h1 {
-            font-size: 300%; }
+            font-size: 400%; }
           .expanded-page .content .list .expanded-row .info em {
             font-style: normal;
             font-size: 100%;
@@ -366,7 +394,7 @@ i.icon-phone {
 body .content .list .expanded-row {
   display: flex !important;
   opacity: 1;
-  height: 100vh !important;
+  height: 85vh !important;
   align-items: center;
   z-index: 15;
   position: relative;
@@ -416,53 +444,46 @@ body .content .list .expanded-row {
   background-image: url(../img/design/auto/hero.jpg); }
 
 #row-ahl {
-  background-color: #0070bf;
-  background-image: url(../img/design/ahl/hero.jpg); }
-
-#ahl {
   background-color: #0070bf; }
 
-#row-vectorart {
-  background-color: #65A69C;
-  background-image: url(../img/design/vectorart/hero.jpg); }
+#row-ahl::after {
+  background-image: url(../img/design/ahl/hero.jpg); }
 
-#vectorart {
+#row-vectorart {
   background-color: #65A69C; }
 
-#row-antilimit {
-  background-color: #000;
-  background-image: url(../img/design/antilimit/hero.jpg); }
+#row-vectorart::after {
+  background-image: url(../img/design/vectorart/hero.jpg); }
 
-#antilimit {
+#row-antilimit {
   background-color: #000; }
 
-#row-exotics {
-  background-color: #F5E5D9;
-  background-image: url(../img/design/exotics/hero.jpg); }
+#row-antilimit::after {
+  background-image: url(../img/design/antilimit/hero.jpg); }
 
-#exotics {
+#row-exotics {
   background-color: #F5E5D9; }
 
-#row-dst {
-  background-color: #DDE3E1;
-  background-image: url(../img/design/dst/hero.jpg); }
+#row-exotics::after {
+  background-image: url(../img/design/exotics/hero.jpg); }
 
-#dst {
+#row-dst {
   background-color: #DDE3E1; }
 
-#row-invicible {
-  background-color: #F8934A;
-  background-image: url(../img/design/invicible/hero.jpg); }
+#row-dst::after {
+  background-image: url(../img/design/dst/hero.jpg); }
 
-#invicible {
+#row-invicible {
   background-color: #F8934A; }
 
-#row-downol {
-  background-color: #748195;
-  background-image: url(../img/design/daysofwar/hero.jpg); }
+#row-invicible::after {
+  background-image: url(../img/design/invicible/hero.jpg); }
 
-#downol {
+#row-downol {
   background-color: #748195; }
+
+#row-downol::after {
+  background-image: url(../img/design/daysofwar/hero.jpg); }
 
 /* unused */
 #row-cavedigger {
@@ -483,90 +504,90 @@ body .content .list .expanded-row {
 
 /* photo rows */
 #row-amsterdam::after {
-  background-image: url(../img/photo/amsterdam/hero.jpg); }
+  background-image: url(../img/photo/amsterdam.jpg); }
 
 #row-austin::after {
-  background-image: url(../img/photo/austin/hero.jpg); }
+  background-image: url(../img/photo/austin.jpg); }
 
 #row-barcelona::after {
-  background-image: url(../img/photo/barcelona/hero.jpg); }
+  background-image: url(../img/photo/barcelona.jpg); }
 
-#row-bigbend {
-  background-image: url(../img/photo/bigbend/hero.jpg); }
+#row-bigbend::after {
+  background-image: url(../img/photo/bigbend.jpg); }
 
-#row-cambodia {
-  background-image: url(../img/photo/cambodia/hero.jpg); }
+#row-cambodia::after {
+  background-image: url(../img/photo/cambodia.jpg); }
 
-#row-chicago {
-  background-image: url(../img/photo/chicago/hero.jpg); }
+#row-chicago::after {
+  background-image: url(../img/photo/chicago.jpg); }
 
-#row-copenhagen {
-  background-image: url(../img/photo/copenhagen/hero.jpg); }
+#row-copenhagen::after {
+  background-image: url(../img/photo/copenhagen.jpg); }
 
-#row-dallas {
-  background-image: url(../img/photo/dallas/hero.jpg); }
+#row-dallas::after {
+  background-image: url(../img/photo/dallas.jpg); }
 
-#row-florida {
-  background-image: url(../img/photo/florida/hero.jpg); }
+#row-florida::after {
+  background-image: url(../img/photo/florida.jpg); }
 
-#row-hawaii {
-  background-image: url(../img/photo/hawaii/hero.jpg); }
+#row-hawaii::after {
+  background-image: url(../img/photo/hawaii.jpg); }
 
-#row-houston {
-  background-image: url(../img/photo/houston/hero.jpg); }
+#row-houston::after {
+  background-image: url(../img/photo/houston.jpg); }
 
-#row-japan {
-  background-image: url(../img/photo/japan/hero.jpg); }
+#row-japan::after {
+  background-image: url(../img/photo/japan.jpg); }
 
-#row-lasvegas {
-  background-image: url(../img/photo/lasvegas/hero.jpg); }
+#row-lasvegas::after {
+  background-image: url(../img/photo/lasvegas.jpg); }
 
-#row-london {
-  background-image: url(../img/photo/london/hero.jpg); }
+#row-london::after {
+  background-image: url(../img/photo/london.jpg); }
 
-#row-madrid {
-  background-image: url(../img/photo/madrid/hero.jpg); }
+#row-madrid::after {
+  background-image: url(../img/photo/madrid.jpg); }
 
-#row-malaysia {
-  background-image: url(../img/photo/malaysia/hero.jpg); }
+#row-malaysia::after {
+  background-image: url(../img/photo/malaysia.jpg); }
 
-#row-newmexico {
-  background-image: url(../img/photo/newmexico/hero.jpg); }
+#row-newmexico::after {
+  background-image: url(../img/photo/newmexico.jpg); }
 
-#row-newyork {
-  background-image: url(../img/photo/newyork/hero.jpg); }
+#row-newyork::after {
+  background-image: url(../img/photo/newyork.jpg); }
 
-#row-paris {
-  background-image: url(../img/photo/paris/hero.jpg); }
+#row-paris::after {
+  background-image: url(../img/photo/paris.jpg); }
 
-#row-puertorico {
-  background-image: url(../img/photo/puertorico/hero.jpg); }
+#row-puertorico::after {
+  background-image: url(../img/photo/puertorico.jpg); }
 
-#row-sanantonio {
-  background-image: url(../img/photo/sanantonio/hero.jpg); }
+#row-sanantonio::after {
+  background-image: url(../img/photo/sanantonio.jpg); }
 
-#row-sanfrancisco {
-  background-image: url(../img/photo/sanfrancisco/hero.jpg); }
+#row-sanfrancisco::after {
+  background-image: url(../img/photo/sanfrancisco.jpg); }
 
-#row-santodomingo {
-  background-image: url(../img/photo/santodomingo/hero.jpg); }
+#row-santodomingo::after {
+  background-image: url(../img/photo/santodomingo.jpg); }
 
-#row-seattle {
-  background-image: url(../img/photo/seattle/hero.jpg); }
+#row-seattle::after {
+  background-image: url(../img/photo/seattle.jpg); }
 
-#row-singapore {
-  background-image: url(../img/photo/singapore/hero.jpg); }
+#row-singapore::after {
+  background-image: url(../img/photo/singapore.jpg); }
 
-#row-stlouis {
-  background-image: url(../img/photo/stlouis/hero.jpg); }
+#row-stlouis::after {
+  background-image: url(../img/photo/stlouis.jpg); }
 
-#row-switzerland {
-  background-image: url(../img/photo/switzerland/hero.jpg); }
+#row-switzerland::after {
+  background-image: url(../img/photo/switzerland.jpg); }
 
-#row-thailand {
-  background-image: url(../img/photo/thailand/hero.jpg); }
+#row-thailand::after {
+  background-image: url(../img/photo/thailand.jpg); }
 
-#row-yellowstone {
-  background-image: url(../img/photo/yellowstone/hero.jpg); }
+#row-yellowstone::after {
+  background-image: url(../img/photo/yellowstone.jpg); }
 
 /*# sourceMappingURL=styles.css.map */

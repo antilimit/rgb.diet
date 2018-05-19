@@ -240,15 +240,17 @@ i.icon-phone {
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        transition:all 0.2s ease-out;
+        transition:all 0.3s ease-out;
         mix-blend-mode:normal;
+        transform:scale(1.04, 1.04);
         /* filter:brightness(1);*/
     }
-    .row:hover:after {
+    .row:hover::after {
       /* filter:brightness(1.1); */
       /* hard light or lumionsoity */
       /* mix-blend-mode:hard-light; */
-      box-shadow: inset 0 0 0 0.3em #fff;
+      box-shadow: inset 0 0 0 0.75em #fff;
+      transform:scale(1.0, 1.0);
       /* left/right
       box-shadow: inset 30px 0 0 -10px #fff, inset -30px 0 0 -10px #fff;
       */
@@ -258,6 +260,7 @@ i.icon-phone {
       height:25vh;
 
       color:#fff;
+      overflow:hidden;
       position:relative;
       transition:all 0.5s ease;
       display:flex;
@@ -268,6 +271,7 @@ i.icon-phone {
       background-size:cover;
       background-color:rgba(0,0,0,0.03);
       transform-origin:center;
+
 
       .info {
         padding:0 72% 0 2em;
@@ -312,6 +316,10 @@ i.icon-phone {
 
     } /* row */
 
+    .row:hover {
+      height:30vh;
+    }
+
     .dark-row {
       .info {
         mix-blend-mode:normal !important;
@@ -335,49 +343,68 @@ i.icon-phone {
   .article {
 
     .masonry {
-      margin: 1.5em 0;
-      padding: 0;
+      column-count: 1;
       column-gap: 0;
-      column-count:3;
+      counter-reset: item-counter;
 
-      /* does auto-media queries */
-      column-width: 20em;
+      /* set column-count in MQs */
 
-       .item {
-         display: inline-block;
-         padding: 1.5em 1.5em 1.5em 1.5em;
-             margin: 0 0 0 -1.5em;
-             width: 100%;
-             box-sizing: border-box;
+      .item {
+        box-sizing: border-box;
+        break-inside: avoid;
+        counter-increment: item-counter;
+        width:100%;
+        padding:2em 2em 0 0;
+        display:block;
 
-         img {
-           display:block;
-           width:100%;
-           height:auto;
-         }
-         p {
-           padding:0 2em 2em 0;
-           -webkit-column-break-inside: avoid; /* Chrome, Safari */
-           page-break-inside: avoid;           /* Theoretically FF 20+ */
-           break-inside: avoid-column;         /* IE 11 */
-         }
-       }
+        img {
+          display:block;
+          width:100%;
+
+        }
+      }
+
+      /*
+      .expanded-item {
+        width: 75vw;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        position: absolute;
+        transition:0.3s width ease-out;
+        opacity:1 !important;
+      }
+      */
 
     }
-    .col-4 {
-      column-count:4;
-    }
-    .col-3 {
-      column-count:3;
-    }
-    .col-2 {
-      column-count:2;
+
+
+    .no-border {
+      .item {
+        padding:0;
+      }
     }
     .col-1 {
       column-count:1;
     }
+    .col-2 {
+      column-count:2;
+    }
+    .col-3 {
+      column-count:3;
+    }
+    .col-4 {
+      column-count:4;
+    }
+    .zoomed {
+      column-count:1 !important;
+    }
+
+
 
   } /* article */
+
+
 
 } /* content */
 
@@ -398,6 +425,28 @@ i.icon-phone {
 
 #photo {
   /* padding-right:20vw; */
+
+  .article {
+    .masonry {
+      .item {
+        position:relative;
+        img {
+          display:block;
+        }
+        .year {
+          position:absolute;
+          bottom:0;
+          left:0;
+          color:#000;
+          background:#fff;
+          padding:0.1em 0.45em 0 0;
+          font-size:175%;
+          display:block;
+        }
+      }
+    }
+
+  }
 
   .row {
     background-position:center center;
@@ -426,6 +475,14 @@ i.icon-phone {
         background:rgba(255,255,255,0.80);
         color:#000;
         padding:0.15em 0.2em 0.25em 0.20em;
+      }
+    } /* info */
+  } /* row */
+
+  .expanded-row {
+    .info {
+      em {
+        /* display:none; */
       }
     }
   }
@@ -507,8 +564,9 @@ i.icon-phone {
         /* hard light or lumionsoity */
         /* mix-blend-mode:hard-light; */
         box-shadow:none;
-
+        transform:scale(1.04, 1.04) !important;
       }
+
       .expanded-row {
         margin:0 !important;
 
@@ -517,7 +575,7 @@ i.icon-phone {
           mix-blend-mode:screen;
 
           h1 {
-            font-size:300%;
+            font-size:400%;
           }
           em {
             font-style:normal;
@@ -566,7 +624,7 @@ body {
       .expanded-row {
         display:flex !important;
         opacity:1;
-        height:100vh !important;
+        height:85vh !important;
         align-items:center;
         z-index:15;
         position:relative;
@@ -642,62 +700,58 @@ body {
 }
 
 
-
 #row-ahl {
   background-color:#0070bf;
+}
+#row-ahl::after {
   background-image:url(../img/design/ahl/hero.jpg);
 }
-#ahl {
-  background-color:#0070bf;
-}
+
+
 
 #row-vectorart {
   background-color:#65A69C;
+}
+#row-vectorart::after {
   background-image:url(../img/design/vectorart/hero.jpg);
 }
-#vectorart {
-  background-color:#65A69C;
-}
+
 
 #row-antilimit {
   background-color:#000;
-  background-image:url(../img/design/antilimit/hero.jpg);
 }
-#antilimit {
-  background-color:#000;
+#row-antilimit::after {
+  background-image:url(../img/design/antilimit/hero.jpg);
 }
 
 #row-exotics {
   background-color:#F5E5D9;
-  background-image:url(../img/design/exotics/hero.jpg);
 }
-#exotics {
-  background-color:#F5E5D9;
+#row-exotics::after {
+  background-image:url(../img/design/exotics/hero.jpg);
 }
 
 #row-dst {
   background-color:#DDE3E1;
-  background-image:url(../img/design/dst/hero.jpg);
 }
-#dst {
-  background-color:#DDE3E1;
+#row-dst::after {
+  background-image:url(../img/design/dst/hero.jpg);
 }
 
 #row-invicible {
   background-color:#F8934A;
-  background-image:url(../img/design/invicible/hero.jpg);
 }
-#invicible {
-  background-color:#F8934A;
+#row-invicible::after {
+  background-image:url(../img/design/invicible/hero.jpg);
 }
 
 #row-downol {
   background-color:#748195;
+}
+#row-downol::after {
   background-image:url(../img/design/daysofwar/hero.jpg);
 }
-#downol {
-  background-color:#748195;
-}
+
 
 
 /* unused */
@@ -726,91 +780,91 @@ body {
 
 
 #row-amsterdam::after {
-  background-image:url(../img/photo/amsterdam/hero.jpg);
+  background-image:url(../img/photo/amsterdam.jpg);
 }
 #row-austin::after {
-  background-image:url(../img/photo/austin/hero.jpg);
+  background-image:url(../img/photo/austin.jpg);
 }
 #row-barcelona::after {
-  background-image:url(../img/photo/barcelona/hero.jpg);
+  background-image:url(../img/photo/barcelona.jpg);
 }
-#row-bigbend {
-  background-image:url(../img/photo/bigbend/hero.jpg);
+#row-bigbend::after {
+  background-image:url(../img/photo/bigbend.jpg);
 }
-#row-cambodia {
-  background-image:url(../img/photo/cambodia/hero.jpg);
+#row-cambodia::after {
+  background-image:url(../img/photo/cambodia.jpg);
 }
-#row-chicago {
-  background-image:url(../img/photo/chicago/hero.jpg);
+#row-chicago::after {
+  background-image:url(../img/photo/chicago.jpg);
 }
-#row-copenhagen {
-  background-image:url(../img/photo/copenhagen/hero.jpg);
+#row-copenhagen::after {
+  background-image:url(../img/photo/copenhagen.jpg);
 }
-#row-dallas {
-  background-image:url(../img/photo/dallas/hero.jpg);
+#row-dallas::after {
+  background-image:url(../img/photo/dallas.jpg);
 }
-#row-florida {
-  background-image:url(../img/photo/florida/hero.jpg);
+#row-florida::after {
+  background-image:url(../img/photo/florida.jpg);
 }
-#row-hawaii {
-  background-image:url(../img/photo/hawaii/hero.jpg);
+#row-hawaii::after {
+  background-image:url(../img/photo/hawaii.jpg);
 }
-#row-houston {
-  background-image:url(../img/photo/houston/hero.jpg);
+#row-houston::after {
+  background-image:url(../img/photo/houston.jpg);
 }
-#row-japan {
-  background-image:url(../img/photo/japan/hero.jpg);
+#row-japan::after {
+  background-image:url(../img/photo/japan.jpg);
 }
-#row-lasvegas {
-  background-image:url(../img/photo/lasvegas/hero.jpg);
+#row-lasvegas::after {
+  background-image:url(../img/photo/lasvegas.jpg);
 }
-#row-london {
-  background-image:url(../img/photo/london/hero.jpg);
+#row-london::after {
+  background-image:url(../img/photo/london.jpg);
 }
-#row-madrid {
-  background-image:url(../img/photo/madrid/hero.jpg);
+#row-madrid::after {
+  background-image:url(../img/photo/madrid.jpg);
 }
-#row-malaysia {
-  background-image:url(../img/photo/malaysia/hero.jpg);
+#row-malaysia::after {
+  background-image:url(../img/photo/malaysia.jpg);
 }
-#row-newmexico {
-  background-image:url(../img/photo/newmexico/hero.jpg);
+#row-newmexico::after {
+  background-image:url(../img/photo/newmexico.jpg);
 }
-#row-newyork {
-  background-image:url(../img/photo/newyork/hero.jpg);
+#row-newyork::after {
+  background-image:url(../img/photo/newyork.jpg);
 }
-#row-paris {
-  background-image:url(../img/photo/paris/hero.jpg);
+#row-paris::after {
+  background-image:url(../img/photo/paris.jpg);
 }
-#row-puertorico {
-  background-image:url(../img/photo/puertorico/hero.jpg);
+#row-puertorico::after {
+  background-image:url(../img/photo/puertorico.jpg);
 }
-#row-sanantonio {
-  background-image:url(../img/photo/sanantonio/hero.jpg);
+#row-sanantonio::after {
+  background-image:url(../img/photo/sanantonio.jpg);
 }
-#row-sanfrancisco {
-  background-image:url(../img/photo/sanfrancisco/hero.jpg);
+#row-sanfrancisco::after {
+  background-image:url(../img/photo/sanfrancisco.jpg);
 }
-#row-santodomingo {
-  background-image:url(../img/photo/santodomingo/hero.jpg);
+#row-santodomingo::after {
+  background-image:url(../img/photo/santodomingo.jpg);
 }
-#row-seattle {
-  background-image:url(../img/photo/seattle/hero.jpg);
+#row-seattle::after {
+  background-image:url(../img/photo/seattle.jpg);
 }
-#row-singapore {
-  background-image:url(../img/photo/singapore/hero.jpg);
+#row-singapore::after {
+  background-image:url(../img/photo/singapore.jpg);
 }
-#row-stlouis {
-  background-image:url(../img/photo/stlouis/hero.jpg);
+#row-stlouis::after {
+  background-image:url(../img/photo/stlouis.jpg);
 }
-#row-switzerland {
-  background-image:url(../img/photo/switzerland/hero.jpg);
+#row-switzerland::after {
+  background-image:url(../img/photo/switzerland.jpg);
 }
-#row-thailand {
-  background-image:url(../img/photo/thailand/hero.jpg);
+#row-thailand::after {
+  background-image:url(../img/photo/thailand.jpg);
 }
-#row-yellowstone {
-  background-image:url(../img/photo/yellowstone/hero.jpg);
+#row-yellowstone::after {
+  background-image:url(../img/photo/yellowstone.jpg);
 }
 
 

@@ -51,7 +51,7 @@ row.click(function(e) {
     }, 500);
 
   } else {
-    
+
     // going back to normal
     $('#ajax-article').remove();
     $body.removeClass('hide-rows');
