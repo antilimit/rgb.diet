@@ -299,7 +299,7 @@ i.icon-phone {
   #photo .row {
     background-position: center center;
     height: 20vh;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.2em;
     background-color: #000;
     /* info */ }
     #photo .row .info {
@@ -602,46 +602,89 @@ body .content .list .expanded-row {
 #row-yellowstone::after {
   background-image: url(../img/photo/yellowstone.jpg); }
 
-@media only screen and (max-width: 600px) {
-  body .navigation, .expanded-page .navigation {
-    width: 100%;
-    height: 8vh;
-    bottom: 0;
-    left: 0;
-    z-index: 25; }
-    body .navigation header, .expanded-page .navigation header {
-      display: none; }
-    body .navigation nav, .expanded-page .navigation nav {
-      transform: none;
-      padding: 0;
+@media only screen and (max-width: 780px) {
+  body, .expanded-page {
+    /* content */ }
+    body .navigation, .expanded-page .navigation {
       width: 100%;
-      line-height: 3;
-      display: flex;
-      height: 100%;
-      justify-content: space-evenly;
-      align-items: center; }
-      body .navigation nav a, .expanded-page .navigation nav a {
-        text-transform: uppercase;
-        height: 100%;
-        font-size: 1.1em;
-        text-align: center; }
-  body .content, .expanded-page .content {
-    width: 100%;
-    left: 0; }
-    body .content #photo .row .info, .expanded-page .content #photo .row .info {
-      padding: 0; }
-      body .content #photo .row .info h1, .expanded-page .content #photo .row .info h1 {
-        font-size: 220%; }
-    body .content .back, .expanded-page .content .back {
-      display: none;
-      top: 0;
+      height: 8vh;
+      bottom: 0;
       left: 0;
-      margin: 0; }
-    body .content .list .expanded-row, .expanded-page .content .list .expanded-row {
-      height: 92vh !important; }
-    body .content .blocker-top, body .content .blocker-bottom, .expanded-page .content .blocker-top, .expanded-page .content .blocker-bottom {
-      display: none; }
-    body .content .wrapper, body .content #design, body .content #photo, .expanded-page .content .wrapper, .expanded-page .content #design, .expanded-page .content #photo {
-      padding: 0; } }
+      z-index: 25; }
+      body .navigation header, .expanded-page .navigation header {
+        display: none; }
+      body .navigation nav, .expanded-page .navigation nav {
+        transform: none;
+        padding: 2.5vh 0;
+        width: 100%;
+        line-height: 1;
+        display: flex;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        box-shadow: 0 0 0em 0.15em rgba(0, 0, 0, 0.1); }
+        body .navigation nav a, .expanded-page .navigation nav a {
+          text-transform: uppercase;
+          height: 100%;
+          font-size: 1.1em;
+          text-align: center; }
+    body .content, .expanded-page .content {
+      width: 100%;
+      left: 0;
+      padding-bottom: 8vh; }
+      body .content #photo .row .info, .expanded-page .content #photo .row .info {
+        font-size: 100%; }
+        body .content #photo .row .info h1, .expanded-page .content #photo .row .info h1 {
+          font-size: 160%; }
+      body .content #photo .row:last-child, .expanded-page .content #photo .row:last-child {
+        margin-bottom: 0; }
+      body .content #photo .expanded-row .info h1, .expanded-page .content #photo .expanded-row .info h1 {
+        color: #000 !important;
+        font-size: 220%; }
+      body .content .back, .expanded-page .content .back {
+        display: none;
+        top: 0;
+        left: 0;
+        margin: 0; }
+      body .content .list, .expanded-page .content .list {
+        /* expanded-row */ }
+        body .content .list .expanded-row, .expanded-page .content .list .expanded-row {
+          height: 80vh !important; }
+        body .content .list .row::after, .expanded-page .content .list .row::after {
+          background-position: left center; }
+        body .content .list .row, .expanded-page .content .list .row {
+          height: 40vh; }
+          body .content .list .row .info, .expanded-page .content .list .row .info {
+            padding: 0 55% 0 1.5em; }
+        body .content .list .row:hover, .expanded-page .content .list .row:hover {
+          height: 40vh; }
+        body .content .list .expanded-row::after, .expanded-page .content .list .expanded-row::after {
+          background-position: center center; }
+        body .content .list .expanded-row, .expanded-page .content .list .expanded-row {
+          background: #000 !important; }
+          body .content .list .expanded-row .info, .expanded-page .content .list .expanded-row .info {
+            padding-right: 25%;
+            /* mix-blend-mode:normal; */ }
+            body .content .list .expanded-row .info h1, .expanded-page .content .list .expanded-row .info h1 {
+              font-size: 190%;
+              line-height: 1.2;
+              color: #fff !important; }
+            body .content .list .expanded-row .info .tags, .expanded-page .content .list .expanded-row .info .tags {
+              mix-blend-mode: normal; }
+              body .content .list .expanded-row .info .tags b, .expanded-page .content .list .expanded-row .info .tags b {
+                background: rgba(255, 255, 255, 0.85); }
+              body .content .list .expanded-row .info .tags .primary, .expanded-page .content .list .expanded-row .info .tags .primary {
+                background: #fff; }
+            body .content .list .expanded-row .info em, .expanded-page .content .list .expanded-row .info em {
+              display: none; }
+        body .content .list .expanded-row::after, .expanded-page .content .list .expanded-row::after {
+          opacity: 0.55; }
+      body .content .blocker-top, body .content .blocker-bottom, .expanded-page .content .blocker-top, .expanded-page .content .blocker-bottom {
+        display: none; }
+      body .content .wrapper, body .content #design, body .content #photo, .expanded-page .content .wrapper, .expanded-page .content #design, .expanded-page .content #photo {
+        padding: 0; }
+
+  /* body */ }
+/* 780px */
 
 /*# sourceMappingURL=styles.css.map */
