@@ -126,6 +126,7 @@ i.icon-phone {
     background: #fff;
     position: fixed;
     padding: 20px 0;
+    text-align: center;
     top: 50px;
     left: 36vw;
     display: block;
@@ -135,7 +136,7 @@ i.icon-phone {
     width: 0;
     overflow: hidden;
     opacity: 0;
-    box-shadow: 20px 0 30px 0px rgba(0, 0, 0, 0.2); }
+    box-shadow: 20px 0 30px -5px rgba(0, 0, 0, 0.3); }
   .content .wrapper {
     padding: 50px 50px 50px 0;
     position: relative;
@@ -221,8 +222,8 @@ i.icon-phone {
             font-weight: 400;
             line-height: 1;
             font-size: 95%;
-            transition-delay: 2s;
-            transition: all 1s ease-out;
+            transition: all 0.5s ease-out;
+            transition-delay: 0.3s;
             transform: scaleY(0); }
           .content .list .row .info .tags .primary {
             background: #fff;
@@ -292,8 +293,8 @@ i.icon-phone {
       left: 0;
       color: #000;
       background: #fff;
-      padding: 0.1em 0.45em 0 0;
-      font-size: 175%;
+      padding: 0.02em 0.4em 0 0;
+      font-size: 145%;
       display: block; }
   #photo .row {
     background-position: center center;
@@ -302,8 +303,6 @@ i.icon-phone {
     background-color: #000;
     /* info */ }
     #photo .row .info {
-      flex-direction: row;
-      display: flex;
       font-size: 120%;
       text-transform: uppercase;
       padding-right: 0; }
@@ -313,18 +312,19 @@ i.icon-phone {
         color: #000;
         line-height: 1; }
       #photo .row .info em {
-        margin: 0 0 0 0.1em;
+        margin: 0.1em 0 0 0;
         height: 1.5em;
+        display: inline-block;
         line-height: 1.1;
         font-size: 100%;
         background: rgba(255, 255, 255, 0.8);
         color: #000;
-        padding: 0.2em 0.25em 0.25em 0.20em;
-        transition: all 0.3s ease-out; }
+        padding: 0.15em 0.25em 0.20em 0.20em;
+        /* transition:all 0.3s ease-out; */ }
   #photo .row:hover {
     height: 27vh; }
   #photo .expanded-row .info em {
-    transform: scaleX(0); }
+    /* transform:scaleY(0); */ }
 
 #about {
   height: 100vh; }
@@ -353,10 +353,10 @@ i.icon-phone {
     .expanded-page .content .list, .expanded-page .content .article {
       padding: 0; }
     .expanded-page .content .back {
-      width: 50px;
+      width: 60px;
       opacity: 1;
       left: 25vw;
-      margin-left: -40px; }
+      margin-left: -50px; }
     .expanded-page .content .list {
       /*
       height:100vh;
@@ -601,5 +601,47 @@ body .content .list .expanded-row {
 
 #row-yellowstone::after {
   background-image: url(../img/photo/yellowstone.jpg); }
+
+@media only screen and (max-width: 600px) {
+  body .navigation, .expanded-page .navigation {
+    width: 100%;
+    height: 8vh;
+    bottom: 0;
+    left: 0;
+    z-index: 25; }
+    body .navigation header, .expanded-page .navigation header {
+      display: none; }
+    body .navigation nav, .expanded-page .navigation nav {
+      transform: none;
+      padding: 0;
+      width: 100%;
+      line-height: 3;
+      display: flex;
+      height: 100%;
+      justify-content: space-evenly;
+      align-items: center; }
+      body .navigation nav a, .expanded-page .navigation nav a {
+        text-transform: uppercase;
+        height: 100%;
+        font-size: 1.1em;
+        text-align: center; }
+  body .content, .expanded-page .content {
+    width: 100%;
+    left: 0; }
+    body .content #photo .row .info, .expanded-page .content #photo .row .info {
+      padding: 0; }
+      body .content #photo .row .info h1, .expanded-page .content #photo .row .info h1 {
+        font-size: 220%; }
+    body .content .back, .expanded-page .content .back {
+      display: none;
+      top: 0;
+      left: 0;
+      margin: 0; }
+    body .content .list .expanded-row, .expanded-page .content .list .expanded-row {
+      height: 92vh !important; }
+    body .content .blocker-top, body .content .blocker-bottom, .expanded-page .content .blocker-top, .expanded-page .content .blocker-bottom {
+      display: none; }
+    body .content .wrapper, body .content #design, body .content #photo, .expanded-page .content .wrapper, .expanded-page .content #design, .expanded-page .content #photo {
+      padding: 0; } }
 
 /*# sourceMappingURL=styles.css.map */
