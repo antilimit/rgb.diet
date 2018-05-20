@@ -370,12 +370,16 @@ i.icon-phone {
         width:100%;
         padding:2em 2em 0 0;
         display:block;
+        cursor:default;
 
         img {
           display:block;
           width:100%;
 
         }
+      }
+      .no-border {
+        padding:0;
       }
 
       /*
@@ -393,26 +397,50 @@ i.icon-phone {
     }
 
 
-    .no-border {
-      .item {
-        padding:0;
+    .masonry-2x1 {
+      display:flex;
+
+      .column:nth-child(1)  {
+        width:65%;
+      }
+      .column:nth-child(2)  {
+        width:35%;
       }
     }
-    .col-1 {
+
+    .masonry-1x2 {
+      display:flex;
+
+      .column:nth-child(1)  {
+        background:red;
+        width:35%;
+      }
+      .column:nth-child(2)  {
+        background:green;
+        width:65%;
+      }
+    }
+
+
+
+    .masonry-no-border {
+      .item {
+        padding:0 !important;
+      }
+    }
+    .masonry-1 {
       column-count:1;
     }
-    .col-2 {
+    .masonry-2 {
       column-count:2;
     }
-    .col-3 {
+    .masonry-3 {
       column-count:3;
     }
-    .col-4 {
+    .masonry-4 {
       column-count:4;
     }
-    .zoomed {
-      column-count:1 !important;
-    }
+
 
 
 
@@ -904,14 +932,28 @@ body {
 
 
 
+@media only screen and (max-width: 900px) {
+
+  body, .expanded-page {
+    .content {
+      .list {
+        .row {
+          .info {
+            padding-right:50%;
+          }
+        }
+      }
+    }
+  }
+
+}
 
 
 
 
 
 
-
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 600px) {
 
   body, .expanded-page {
     .navigation {
@@ -945,6 +987,17 @@ body {
       padding-bottom:8vh;
 
       #photo {
+        .article {
+          .masonry {
+            .item {
+              .year {
+                font-size:125%;
+                bottom:1em;
+                left:1.1em;
+              }
+            }
+          }
+        }
         .row {
 
           .info {
@@ -1030,11 +1083,20 @@ body {
       }
 
       .article {
-        .masonry {
+        padding-top:1.5em;
 
+        .masonry {
+          column-count:1;
+          display:block;
+          .column {
+            width:100%;
+          }
+          .item {
+            padding:0 1.5em 1.5em 1.5em;
+          }
         }
       }
     } /* content */
   } /* body */
 
-} /* 780px */
+} /* 650px */

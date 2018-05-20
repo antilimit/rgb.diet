@@ -31,7 +31,7 @@ if (sectionID == 'photo') {
           $(data).find("a:contains(" + fileextension + ")").each(function () {
               var filename = this.href.replace(window.location, "").replace("http://rgb.diet/temp/new/", "");
               var year = this.href.split('-')[1].replace(".jpg", "");
-              $('.masonry').append('<a class="item" href="#"><img src="' + dir + filename + '"><span class="year">' + year + '</span></a>');
+              $('.masonry').append('<a class="item" href="#"><img src="' + dir + filename + '" /><span class="year">' + year + '</span></a>');
           });
       }
   });
