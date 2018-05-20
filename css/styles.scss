@@ -361,8 +361,9 @@ i.icon-phone {
       column-gap: 0;
       counter-reset: item-counter;
 
-      /* set column-count in MQs */
+      .column {
 
+      }
       .item {
         box-sizing: border-box;
         break-inside: avoid;
@@ -400,6 +401,13 @@ i.icon-phone {
     .masonry-2x1 {
       display:flex;
 
+      .column {
+        display:flex;
+        align-tems:center;
+        flex-direction:column;
+        justify-content:center;
+      }
+
       .column:nth-child(1)  {
         width:65%;
       }
@@ -411,12 +419,17 @@ i.icon-phone {
     .masonry-1x2 {
       display:flex;
 
+      .column {
+        display:flex;
+        align-tems:center;
+        flex-direction:column;
+        justify-content:center;
+      }
+
       .column:nth-child(1)  {
-        background:red;
         width:35%;
       }
       .column:nth-child(2)  {
-        background:green;
         width:65%;
       }
     }

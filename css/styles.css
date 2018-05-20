@@ -246,7 +246,6 @@ i.icon-phone {
     column-count: 1;
     column-gap: 0;
     counter-reset: item-counter;
-    /* set column-count in MQs */
     /*
     .expanded-item {
       width: 75vw;
@@ -273,17 +272,25 @@ i.icon-phone {
       padding: 0; }
   .content .article .masonry-2x1 {
     display: flex; }
+    .content .article .masonry-2x1 .column {
+      display: flex;
+      align-tems: center;
+      flex-direction: column;
+      justify-content: center; }
     .content .article .masonry-2x1 .column:nth-child(1) {
       width: 65%; }
     .content .article .masonry-2x1 .column:nth-child(2) {
       width: 35%; }
   .content .article .masonry-1x2 {
     display: flex; }
+    .content .article .masonry-1x2 .column {
+      display: flex;
+      align-tems: center;
+      flex-direction: column;
+      justify-content: center; }
     .content .article .masonry-1x2 .column:nth-child(1) {
-      background: red;
       width: 35%; }
     .content .article .masonry-1x2 .column:nth-child(2) {
-      background: green;
       width: 65%; }
   .content .article .masonry-no-border .item {
     padding: 0 !important; }
