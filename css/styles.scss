@@ -331,7 +331,7 @@ i.icon-phone {
     } /* row */
 
     .row:hover {
-      height:30vh;
+
     }
 
     .dark-row {
@@ -416,6 +416,24 @@ i.icon-phone {
       }
     }
 
+    .masonry-3x1 {
+      display:flex;
+
+      .column {
+        display:flex;
+        align-tems:center;
+        flex-direction:column;
+        justify-content:center;
+      }
+
+      .column:nth-child(1)  {
+        width:75%;
+      }
+      .column:nth-child(2)  {
+        width:25%;
+      }
+    }
+
     .masonry-1x2 {
       display:flex;
 
@@ -441,20 +459,12 @@ i.icon-phone {
         padding:0 !important;
       }
     }
-    .masonry-1 {
-      column-count:1;
-    }
-    .masonry-2 {
-      column-count:2;
-    }
-    .masonry-3 {
-      column-count:3;
-    }
-    .masonry-4 {
-      column-count:4;
-    }
-
-
+    .masonry-1 { column-count:1; }
+    .masonry-2 { column-count:2; }
+    .masonry-3 { column-count:3; }
+    .masonry-4 { column-count:4; }
+    .masonry-5 { column-count:5; }
+    .masonry-6 { column-count:6; }
 
 
   } /* article */
@@ -479,7 +489,8 @@ i.icon-phone {
 }
 
 #photo {
-  padding-right:25vw;
+  display:flex;
+  flex-wrap:wrap;
 
   .article {
     .masonry {
@@ -505,9 +516,9 @@ i.icon-phone {
 
   .row {
     background-position:center center;
-    height:20vh;
-    margin-bottom:0.2em;
+    height:23vh;
     background-color:#000;
+    width:50%;
 
     .info {
       font-size:120%;
@@ -534,8 +545,16 @@ i.icon-phone {
     } /* info */
   } /* row */
 
+  .row::after {
+    /*
+    box-shadow: inset 0 0 0 0.75em #fff;
+    box-shadow: inset 30px 0 0 -10px #fff, inset -30px 0 0 -10px #fff;
+    */
+
+  }
+
   .row:hover {
-    height:27vh;
+
   }
 
   .expanded-row {
@@ -554,12 +573,51 @@ i.icon-phone {
 
 #about {
   height:100vh;
+  display:flex;
+  align-items:center;
+
+  .gradient {
+
+    background: #4ea6ff;
+    background: -moz-linear-gradient(-45deg, #4ea6ff 0%, #4de4a3 41%, #f95000 100%);
+    background: -webkit-linear-gradient(-45deg, #4ea6ff 0%,#4de4a3 41%,#f95000 100%);
+    background: linear-gradient(135deg, #4ea6ff 0%,#4de4a3 41%,#f95000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4ea6ff', endColorstr='#f95000',GradientType=1 );
+
+
+    position:absolute;
+    top:50%;
+    margin-top:-30vh;
+    display:block;
+    left:0;
+    width:100%;
+    height:60vh;
+    z-index:0;
+  }
   .video {
+    opacity:0.6;
     width:100%;
     height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
     background-size:cover;
+    filter:brightness(0.5);
     display:block;
-
+    mix-blend-mode:overlay;
+    /* hard light, lighten, lumonisoty, color-burn */
+  }
+  .copy {
+    font-size:365%;
+    font-weight:200;
+    color:#fff;
+    z-index:1;
+    line-height:0.9em;
+    letter-spacing:-0.05em;
+    padding:0 45% 0 5%;
+    margin:0;
   }
 }
 
@@ -612,7 +670,7 @@ i.icon-phone {
         display:none;
       }
       .row {
-        /* opacity:0; */
+        opacity:0;
         overflow:hidden;
         /* display:none; */
         /* height:0; */
@@ -628,6 +686,8 @@ i.icon-phone {
 
       .expanded-row {
         margin:0 !important;
+        width:100% !important;
+        opacity:1 !important;
 
         .info {
           padding-right:55%;
@@ -810,10 +870,10 @@ body {
   background-image:url(../img/design/invicible/hero.jpg);
 }
 
-#row-downol {
+#row-daysofwar {
   background-color:#748195;
 }
-#row-downol::after {
+#row-daysofwar::after {
   background-image:url(../img/design/daysofwar/hero.jpg);
 }
 
@@ -987,6 +1047,7 @@ body {
         align-items:center;
         box-shadow:0 0 0em 0.15em rgba(0,0,0,0.1);
         a {
+          opacity:1 !important;
           text-transform:uppercase;
           height:100%;
           font-size:1.1em;
@@ -1025,6 +1086,8 @@ body {
           margin-bottom:0;
         }
         .expanded-row {
+          height:40vh !important;
+
           .info {
             h1 {
               color:#000 !important;
@@ -1032,7 +1095,7 @@ body {
             }
           }
         }
-      }
+      } /* photo */
 
       .back {
         display:none;
@@ -1106,6 +1169,11 @@ body {
           }
           .item {
             padding:0 1.5em 1.5em 1.5em;
+          }
+        }
+        .masonry-no-border {
+          .item {
+            padding:1.5em !important;
           }
         }
       }
