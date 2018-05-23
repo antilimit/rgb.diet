@@ -28,19 +28,25 @@ row.click(function(e) {
   if ($body.hasClass('expanded-page')) {
     // expanding
 
-    /*
-    history.pushState({
-        id: 'homepage'
-    }, 'rgb / ' + rowID, '/temp/new/' + sectionID + '/' + rowID );
-    */
-
     $('html, body').animate({ scrollTop: ($(this).offset().top - 52) }, 300);
     setTimeout(function(){
       var div = $('<div id="ajax-article" />');
       if (sectionID == 'design') {
+        // design
         div.load('html/design/' + rowID + '.html');
+        /*
+        history.pushState({
+            id: 'design'
+        }, 'rgb / design / ' + rowID, root + 'design/' + rowID );
+        */
       } else {
+        // photo
         div.load('html/photo/index.html');
+        /*
+        history.pushState({
+            id: 'design'
+        }, 'rgb / photo / ' + rowID, root + 'photo/' + rowID );
+        */
       }
       dis.after(div);
       $body.addClass('hide-rows');
@@ -61,7 +67,7 @@ row.click(function(e) {
   } else {
 
     // going back to normal
-    pageState = 'list';    
+    pageState = 'list';
     $('#ajax-article').remove();
     $body.removeClass('hide-rows');
     $('html, body').animate({ scrollTop: ($(this).offset().top - 0) }, 0);

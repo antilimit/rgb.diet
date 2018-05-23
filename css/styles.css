@@ -785,10 +785,12 @@ body .content .list .expanded-row {
         font-size: 125%;
         bottom: 1em;
         left: 1.1em; }
-      body .content #photo .row .info, .expanded-page .content #photo .row .info {
-        font-size: 100%; }
-        body .content #photo .row .info h1, .expanded-page .content #photo .row .info h1 {
-          font-size: 160%; }
+      body .content #photo .row, .expanded-page .content #photo .row {
+        width: 100%; }
+        body .content #photo .row .info, .expanded-page .content #photo .row .info {
+          font-size: 100%; }
+          body .content #photo .row .info h1, .expanded-page .content #photo .row .info h1 {
+            font-size: 160%; }
       body .content #photo .row:last-child, .expanded-page .content #photo .row:last-child {
         margin-bottom: 0; }
       body .content #photo .expanded-row, .expanded-page .content #photo .expanded-row {
@@ -851,6 +853,6 @@ body .content .list .expanded-row {
           padding: 0 1.5em 1.5em 1.5em !important; }
 
   /* body */ }
-/* 650px */
+/* 740px */
 
 /*# sourceMappingURL=styles.css.map */

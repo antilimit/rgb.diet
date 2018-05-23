@@ -28,8 +28,8 @@ console.log(sectionID);
 
 /*
 history.pushState({
-    id: 'homepage'
-}, 'rgb / design', '/temp/new/design');
+    id: 'design'
+}, 'rgb / design', root + 'design');
 */
 
 
@@ -49,16 +49,28 @@ $('.nav-design').click(function(e) {
   tapNav();
   $(this).addClass('selected');
   $ajax.load('html/design.html');
-  e.preventDefault();
+
   /*
-  window.history.pushState('design', 'rgb /design', '/design');
+  history.pushState({
+      id: 'design'
+  }, 'rgb / design', root + 'design');
   */
+
+  e.preventDefault();
+
 });
 
 $('.nav-photo').click(function(e) {
   tapNav();
   $(this).addClass('selected');
   $ajax.load('html/photo.html');
+
+  /*
+  history.pushState({
+      id: 'photo'
+  }, 'rgb / photo', root + 'photo');
+  */
+
   e.preventDefault();
 });
 
@@ -66,6 +78,13 @@ $('.nav-resume').click(function(e) {
   tapNav();
   $(this).addClass('selected');
   $ajax.load('html/resume.html');
+
+  /*
+  history.pushState({
+      id: 'resume'
+  }, 'rgb / resume', root + 'resume');
+  */
+
   e.preventDefault();
 });
 
@@ -73,6 +92,13 @@ $('.nav-about').click(function(e) {
   tapNav();
   $(this).addClass('selected');
   $ajax.load('html/about.html');
+
+  /*
+  history.pushState({
+      id: 'about'
+  }, 'rgb / about', root + 'about');
+  */
+  
   e.preventDefault();
 });
 
