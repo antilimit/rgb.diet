@@ -1,7 +1,7 @@
 
-
 // vars
 
+pageState = 'article';
 
 // onload
 

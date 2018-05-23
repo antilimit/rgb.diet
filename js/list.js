@@ -1,10 +1,16 @@
+
+
 // vars
 
 var row = $('.row');
 var sectionID = $('.wrapper').attr('id');
-var rowID;
 var dis;
 var photoCount;
+
+pageState = 'list';
+
+console.log(pageState);
+
 
 // events
 
@@ -14,6 +20,8 @@ row.click(function(e) {
   rowID = $(this).attr('id').replace('row-', '');
   photoCount = $(this).find('.count').html();
   photoCountInt = parseInt(photoCount) + 1;
+  pageState = 'article';
+  console.log(pageState);
 
   dis = $(this);
 
@@ -53,6 +61,7 @@ row.click(function(e) {
   } else {
 
     // going back to normal
+    pageState = 'list';    
     $('#ajax-article').remove();
     $body.removeClass('hide-rows');
     $('html, body').animate({ scrollTop: ($(this).offset().top - 0) }, 0);
