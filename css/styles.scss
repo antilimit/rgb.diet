@@ -3,6 +3,13 @@
 $green: #4DE4A3;
 $red: #F95000;
 $blue: #4EA6FF;
+$black: #222;
+
+$twitter: #0084FF;
+$facebook: #3B5998;
+$instagram: #cd486b;
+$linkedin: #0077B5;
+$deviantart: #4e6252;
 
 /* sizes */
 
@@ -160,9 +167,51 @@ i.icon-phone {
       letter-spacing:0.05em;
       font-size:120%;
     }
-    .contact {
-      font-size:90%;
+    h2 {
+      clear:both;
+      font-weight:200;
+      opacity:0.60;
     }
+    .social {
+      display:flex;
+      align-items:center;
+    }
+    .email {
+      font-size:95%;
+      letter-spacing:1.1;
+      padding:0.3em 0;
+    }
+    .contact {
+      font-size:95%;
+      display:inline-block;
+
+      a {
+        display:flex;
+        align-items:center;
+        justify-content: left;
+        svg {
+          display:block;
+          fill:$black;
+          color:$black;
+          width:2em;
+        }
+        .handle {
+          display:none;
+        }
+      }
+    }
+    .twitter a svg { width:2em; }
+    .linkedin a svg { width:2.1em; }
+    .instagram a svg { width:1.7em; }
+
+    /*
+    .twitter a svg { color:$twitter; fill:$twitter; }
+    .facebook a svg { color:$facebook; fill:$facebook; }
+    .instagram a svg { color:$instagram; fill:$instagram; }
+    .linkedin a svg { color:$linkedin; fill:$linkedin; }
+    .deviantart a svg { color:$deviantart; fill:$deviantart; }
+    .mail a svg { color:$black; fill:$black; }
+    */
   }
 }
 
@@ -516,7 +565,7 @@ i.icon-phone {
 
   .row {
     background-position:center center;
-    height:23vh;
+    height:27vh;
     background-color:#000;
     width:50%;
 
@@ -1173,7 +1222,7 @@ body {
         }
         .masonry-no-border {
           .item {
-            padding:1.5em !important;
+            padding:0 1.5em 1.5em 1.5em !important;
           }
         }
       }
