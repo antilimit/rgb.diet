@@ -65,7 +65,7 @@ i.icon-phone {
       .navigation nav .logo span {
         position: relative; }
       .navigation nav .logo .logo-g {
-        color: #F95000; }
+        color: yellow; }
       .navigation nav .logo .logo-b {
         color: #4DE4A3;
         top: -60px;
@@ -854,5 +854,3 @@ body .content .list .expanded-row {
 
   /* body */ }
 /* 740px */
-
-/*# sourceMappingURL=styles.css.map */
