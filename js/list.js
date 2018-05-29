@@ -33,7 +33,7 @@ row.click(function(e) {
       var div = $('<div id="ajax-article" />');
       if (sectionID == 'design') {
         // design
-        div.load('html/design/' + rowID + '.html');
+        div.load(root + 'design/' + rowID + '/index.html');
         /*
         history.pushState({
             id: 'design'
@@ -41,7 +41,7 @@ row.click(function(e) {
         */
       } else {
         // photo
-        div.load('html/photo/index.html');
+        div.load(root + 'photo/article.html');
         /*
         history.pushState({
             id: 'design'

@@ -18,7 +18,7 @@ var root = 'http://rgb.diet/temp/new/'
 
 
 
-$ajax.load(root + 'html/design.html');
+$ajax.load(root + 'design/index.html');
 pageState = 'list';
 
 console.log(pageState);
@@ -48,7 +48,7 @@ $navLink.hover(
 $('.nav-design').click(function(e) {
   tapNav();
   $(this).addClass('selected');
-  $ajax.load('html/design.html');
+  $ajax.load(root + 'design/index.html');
 
   /*
   history.pushState({
@@ -63,7 +63,7 @@ $('.nav-design').click(function(e) {
 $('.nav-photo').click(function(e) {
   tapNav();
   $(this).addClass('selected');
-  $ajax.load('html/photo.html');
+  $ajax.load(root + 'photo/index.html');
 
   /*
   history.pushState({
@@ -77,7 +77,7 @@ $('.nav-photo').click(function(e) {
 $('.nav-resume').click(function(e) {
   tapNav();
   $(this).addClass('selected');
-  $ajax.load('html/resume.html');
+  $ajax.load(root + 'resume/index.html');
 
   /*
   history.pushState({
@@ -91,14 +91,14 @@ $('.nav-resume').click(function(e) {
 $('.nav-about').click(function(e) {
   tapNav();
   $(this).addClass('selected');
-  $ajax.load('html/about.html');
+  $ajax.load(root + 'about/index.html');
 
   /*
   history.pushState({
       id: 'about'
   }, 'rgb / about', root + 'about');
   */
-  
+
   e.preventDefault();
 });
 

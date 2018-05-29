@@ -7,7 +7,7 @@ pageState = 'article';
 
 /*
 for (i = 1; i < photoCountInt ; i++) {
-  $('.masonry').append('<a class="item" href="#"><img src="img/photo/' + rowID + '/' + i + '.jpg"></a>');
+  $('.masonry').append('<a class="item" href="#"><img src="photo/' + rowID + '/' + i + '.jpg"></a>');
 }
 */
 
@@ -19,15 +19,14 @@ if (sectionID == 'design') {
 
 if (sectionID == 'photo') {
 
-
-  var dir = 'img/photo/' + rowID + '/';
+  var dir = 'photo/' + rowID + '/';
   var fileextension = ".jpg";
 
   $.ajax({
-      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+      // This will retrieve the contents of the folder if the folder is configured as 'browsable'
       url: dir,
       success: function (data) {
-          //List all .png file names in the page
+          // List all .png file names in the page
           $(data).find("a:contains(" + fileextension + ")").each(function () {
               var filename = this.href.replace(window.location, "").replace("http://rgb.diet/temp/new/", "");
               var year = this.href.split('-')[1].replace(".jpg", "");
