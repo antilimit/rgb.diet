@@ -4,8 +4,7 @@ body {
   /* font-family: 'proxima_nova_ltthin', sans-serif; */
   font-family: 'Barlow Semi Condensed', sans-serif;
   background: #fff;
-  font-weight: 200;
-  color: #999; }
+  font-weight: 200; }
 
 h1, h2, h3, h4, h5 {
   font-weight: 400; }
@@ -306,7 +305,9 @@ i.icon-phone {
       cursor: default; }
       .content .article .masonry .item img {
         display: block;
-        width: 100%; }
+        width: 100%;
+        min-height: 10em;
+        background: rgba(0, 0, 0, 0.1); }
     .content .article .masonry .no-border {
       padding: 0; }
   .content .article .masonry-2x1 {
@@ -379,7 +380,9 @@ i.icon-phone {
   #photo .article .masonry .item {
     position: relative; }
     #photo .article .masonry .item img {
-      display: block; }
+      display: block;
+      min-height: 15em;
+      background: rgba(0, 0, 0, 0.1); }
     #photo .article .masonry .item .year {
       position: absolute;
       bottom: 0;
@@ -392,7 +395,7 @@ i.icon-phone {
   #photo .row {
     background-position: center center;
     height: 27vh;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.1);
     width: 50%;
     /* info */ }
     #photo .row .info {
@@ -547,41 +550,37 @@ body .content .list .expanded-row {
 /* design rows */
 #row-24hf {
   background-color: #314360;
-  height: 39vh; }
+  height: 35vh; }
 
 #row-24hf::after {
   background-image: url(../design/24hf/hero.jpg); }
 
 #row-cubemoments {
-  background-color: #7F0258;
-  height: 32vh; }
+  background-color: #7F0258; }
 
 #row-cubemoments::after {
   background-image: url(../design/cubemoments/hero.jpg); }
 
 #row-yourtrainer {
-  background-color: #A4C4C9;
-  height: 25vh; }
+  background-color: #A4C4C9; }
 
 #row-yourtrainer::after {
   background-image: url(../design/yourtrainer/hero.jpg); }
 
 #row-thecube {
   background-color: #e45d25;
-  height: 45vh; }
+  height: 35vh; }
 
 #row-thecube::after {
   background-image: url(../design/thecube/hero.jpg); }
 
 #row-pigments {
-  background-color: #F27B7A;
-  height: 23vh; }
+  background-color: #F27B7A; }
 
 #row-pigments::after {
   background-image: url(../design/pigments/hero.jpg); }
 
 #row-idighouse {
-  height: 21vh;
   background-color: #D88500; }
 
 #row-idighouse::after {
@@ -596,49 +595,43 @@ body .content .list .expanded-row {
 
 #row-ahl {
   background-color: #0070bf;
-  height: 38vh; }
+  height: 35vh; }
 
 #row-ahl::after {
   background-image: url(../design/ahl/hero.jpg); }
 
 #row-vectorart {
-  height: 26vh;
   background-color: #65A69C; }
 
 #row-vectorart::after {
   background-image: url(../design/vectorart/hero.jpg); }
 
 #row-antilimit {
-  background-color: #000;
-  height: 31vh; }
+  background-color: #000; }
 
 #row-antilimit::after {
   background-image: url(../design/antilimit/hero.jpg); }
 
 #row-exotics {
-  background-color: #F5E5D9;
-  height: 23vh; }
+  background-color: #F5E5D9; }
 
 #row-exotics::after {
   background-image: url(../design/exotics/hero.jpg); }
 
 #row-dst {
-  background-color: #DDE3E1;
-  height: 21vh; }
+  background-color: #DDE3E1; }
 
 #row-dst::after {
   background-image: url(../design/dst/hero.jpg); }
 
 #row-invicible {
-  background-color: #F8934A;
-  height: 28vh; }
+  background-color: #F8934A; }
 
 #row-invicible::after {
   background-image: url(../design/invicible/hero.jpg); }
 
 #row-daysofwar {
-  background-color: #748195;
-  height: 22vh; }
+  background-color: #748195; }
 
 #row-daysofwar::after {
   background-image: url(../design/daysofwar/hero.jpg); }
@@ -813,9 +806,12 @@ body .content .list .expanded-row {
           color: #000 !important;
           font-size: 220%; }
       body .content .back, .expanded-page .content .back {
-        display: none;
-        top: 0;
+        top: auto;
         left: 0;
+        right: auto;
+        bottom: 8vh;
+        padding: 3px;
+        width: 18%;
         margin: 0; }
       body .content .list, .expanded-page .content .list {
         /* expanded-row */ }
@@ -868,3 +864,5 @@ body .content .list .expanded-row {
 
   /* body */ }
 /* 740px */
+
+/*# sourceMappingURL=styles.css.map */

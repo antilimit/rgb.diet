@@ -25,7 +25,6 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   background:#fff;
   font-weight:200;
-  color:#999;
 }
 
 h1, h2, h3, h4, h5 {
@@ -429,7 +428,8 @@ i.icon-phone {
         img {
           display:block;
           width:100%;
-
+          min-height:10em;
+          background:rgba(0,0,0,0.10);
         }
       }
       .no-border {
@@ -562,6 +562,8 @@ i.icon-phone {
         position:relative;
         img {
           display:block;
+          min-height: 15em;
+          background: rgba(0,0,0,0.10);
         }
         .year {
           position:absolute;
@@ -581,7 +583,7 @@ i.icon-phone {
   .row {
     background-position:center center;
     height:27vh;
-    background-color:#000;
+    background-color:rgba(0,0,0,0.10);
     width:50%;
 
     .info {
@@ -835,7 +837,7 @@ body {
 
 #row-24hf {
   background-color:#314360;
-  height:39vh;
+  height:35vh;
 }
 #row-24hf::after {
   background-image:url(../design/24hf/hero.jpg);
@@ -843,7 +845,6 @@ body {
 
 #row-cubemoments {
   background-color:#7F0258;
-  height:32vh;
 }
 #row-cubemoments::after {
   background-image:url(../design/cubemoments/hero.jpg);
@@ -851,7 +852,6 @@ body {
 
 #row-yourtrainer {
   background-color:#A4C4C9;
-  height:25vh;
 }
 #row-yourtrainer::after {
   background-image:url(../design/yourtrainer/hero.jpg);
@@ -859,7 +859,7 @@ body {
 
 #row-thecube {
   background-color:#e45d25;
-  height:45vh;
+  height:35vh;
 }
 #row-thecube::after {
   background-image:url(../design/thecube/hero.jpg);
@@ -867,14 +867,12 @@ body {
 
 #row-pigments {
   background-color:#F27B7A;
-  height:23vh;
 }
 #row-pigments::after {
   background-image:url(../design/pigments/hero.jpg);
 }
 
 #row-idighouse {
-  height:21vh;
   background-color:#D88500;
 }
 #row-idighouse::after {
@@ -891,14 +889,13 @@ body {
 
 #row-ahl {
   background-color:#0070bf;
-  height:38vh;
+  height:35vh;
 }
 #row-ahl::after {
   background-image:url(../design/ahl/hero.jpg);
 }
 
 #row-vectorart {
-  height:26vh;
   background-color:#65A69C;
 }
 #row-vectorart::after {
@@ -907,7 +904,6 @@ body {
 
 #row-antilimit {
   background-color:#000;
-  height:31vh;
 }
 #row-antilimit::after {
   background-image:url(../design/antilimit/hero.jpg);
@@ -915,7 +911,6 @@ body {
 
 #row-exotics {
   background-color:#F5E5D9;
-  height:23vh;
 }
 #row-exotics::after {
   background-image:url(../design/exotics/hero.jpg);
@@ -923,7 +918,6 @@ body {
 
 #row-dst {
   background-color:#DDE3E1;
-  height:21vh;
 }
 #row-dst::after {
   background-image:url(../design/dst/hero.jpg);
@@ -931,7 +925,6 @@ body {
 
 #row-invicible {
   background-color:#F8934A;
-  height:28vh;
 }
 #row-invicible::after {
   background-image:url(../design/invicible/hero.jpg);
@@ -939,7 +932,6 @@ body {
 
 #row-daysofwar {
   background-color:#748195;
-  height:22vh;
 }
 #row-daysofwar::after {
   background-image:url(../design/daysofwar/hero.jpg);
@@ -1179,10 +1171,13 @@ body {
       } /* photo */
 
       .back {
-        display:none;
-        top:0;
-        left:0;
-        margin:0;
+        top: auto;
+        left: 0;
+        right: auto;
+        bottom: 8vh;
+        padding: 3px;
+        width: 18%;
+        margin: 0;
       }
       .list {
         .expanded-row {
