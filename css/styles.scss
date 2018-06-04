@@ -429,7 +429,7 @@ i.icon-phone {
           display:block;
           width:100%;
           min-height:10em;
-          background:rgba(0,0,0,0.10);
+          object-fit:contain;
         }
       }
       .no-border {
@@ -466,6 +466,24 @@ i.icon-phone {
       }
       .column:nth-child(2)  {
         width:35%;
+      }
+    }
+
+    .masonry-1x3 {
+      display:flex;
+
+      .column {
+        display:flex;
+        align-tems:center;
+        flex-direction:column;
+        justify-content:center;
+      }
+
+      .column:nth-child(1)  {
+        width:25%;
+      }
+      .column:nth-child(2)  {
+        width:75%;
       }
     }
 

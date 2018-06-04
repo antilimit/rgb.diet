@@ -307,7 +307,7 @@ i.icon-phone {
         display: block;
         width: 100%;
         min-height: 10em;
-        background: rgba(0, 0, 0, 0.1); }
+        object-fit: contain; }
     .content .article .masonry .no-border {
       padding: 0; }
   .content .article .masonry-2x1 {
@@ -321,6 +321,17 @@ i.icon-phone {
       width: 65%; }
     .content .article .masonry-2x1 .column:nth-child(2) {
       width: 35%; }
+  .content .article .masonry-1x3 {
+    display: flex; }
+    .content .article .masonry-1x3 .column {
+      display: flex;
+      align-tems: center;
+      flex-direction: column;
+      justify-content: center; }
+    .content .article .masonry-1x3 .column:nth-child(1) {
+      width: 25%; }
+    .content .article .masonry-1x3 .column:nth-child(2) {
+      width: 75%; }
   .content .article .masonry-3x1 {
     display: flex; }
     .content .article .masonry-3x1 .column {
