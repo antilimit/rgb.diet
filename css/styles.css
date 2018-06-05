@@ -300,7 +300,8 @@ i.icon-phone {
       break-inside: avoid;
       counter-increment: item-counter;
       width: 100%;
-      padding: 2em 2em 0 0;
+      height: 100%;
+      padding: 3em 3em 0 0;
       display: block;
       cursor: default; }
       .content .article .masonry .item img {
@@ -308,6 +309,12 @@ i.icon-phone {
         width: 100%;
         min-height: 10em;
         object-fit: contain; }
+    .content .article .masonry .cover img {
+      height: 100%;
+      object-fit: cover; }
+    .content .article .masonry .contain img {
+      height: 100%;
+      object-fit: contain; }
     .content .article .masonry .no-border {
       padding: 0; }
   .content .article .masonry-2x1 {
@@ -343,6 +350,17 @@ i.icon-phone {
       width: 75%; }
     .content .article .masonry-3x1 .column:nth-child(2) {
       width: 25%; }
+  .content .article .masonry-1x25 {
+    display: flex; }
+    .content .article .masonry-1x25 .column {
+      display: flex;
+      align-tems: center;
+      flex-direction: column;
+      justify-content: center; }
+    .content .article .masonry-1x25 .column:nth-child(1) {
+      width: 30%; }
+    .content .article .masonry-1x25 .column:nth-child(2) {
+      width: 70%; }
   .content .article .masonry-1x2 {
     display: flex; }
     .content .article .masonry-1x2 .column {

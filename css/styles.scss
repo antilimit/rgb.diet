@@ -421,7 +421,8 @@ i.icon-phone {
         break-inside: avoid;
         counter-increment: item-counter;
         width:100%;
-        padding:2em 2em 0 0;
+        height:100%;
+        padding:3em 3em 0 0;
         display:block;
         cursor:default;
 
@@ -429,6 +430,18 @@ i.icon-phone {
           display:block;
           width:100%;
           min-height:10em;
+          object-fit:contain;
+        }
+      }
+      .cover {
+        img {
+          height:100%;
+          object-fit:cover;
+        }
+      }
+      .contain {
+        img {
+          height:100%;
           object-fit:contain;
         }
       }
@@ -502,6 +515,24 @@ i.icon-phone {
       }
       .column:nth-child(2)  {
         width:25%;
+      }
+    }
+
+    .masonry-1x25 {
+      display:flex;
+
+      .column {
+        display:flex;
+        align-tems:center;
+        flex-direction:column;
+        justify-content:center;
+      }
+
+      .column:nth-child(1)  {
+        width:30%;
+      }
+      .column:nth-child(2)  {
+        width:70%;
       }
     }
 
