@@ -116,7 +116,8 @@ i.icon-phone {
       clear: both;
       font-weight: 200;
       opacity: 0.60;
-      font-size: 110%; }
+      font-size: 110%;
+      padding: 0.4em 0 0 0; }
     .navigation header .social {
       display: flex;
       align-items: center; }
