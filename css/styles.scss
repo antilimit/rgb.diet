@@ -104,10 +104,10 @@ i.icon-phone {
     .logo {
       font-size:650%;
       letter-spacing:-0.19em;
-      transform:scale(1.5,1.5);
+      transform:scale(1.8,1.8);
       position:absolute;
       left: -1.3em;
-      margin-top: -45px;
+      margin-top: -48px;
       top: 50%;
 
       span {
@@ -172,7 +172,7 @@ i.icon-phone {
     h2 {
       clear:both;
       font-weight:200;
-      opacity:0.60;
+      opacity:0.40;
       font-size:110%;
       padding:0.4em 0 0 0;
     }
@@ -357,15 +357,17 @@ i.icon-phone {
         .tags {
           height:0;
           overflow:hidden;
-          display:block;
+          display:flex;
           mix-blend-mode:screen;
+          align-items:flex-end;
+          flex-wrap:wrap;
 
           b {
             text-transform:uppercase;
             background:rgba(255,255,255,0.75);
             padding:0.15em 0.25em 0.30em 0.25em;
             display:inline-block;
-            margin:0 0 0.20em 0;
+            margin:0 0.10em 0.10em 0;
             color:#000;
             font-weight:400;
             line-height:1;
@@ -377,6 +379,7 @@ i.icon-phone {
           .primary {
             background:#fff;
             font-weight:600;
+            font-size:120%;
           }
         }
       }
@@ -413,6 +416,7 @@ i.icon-phone {
       column-count: 1;
       column-gap: 0;
       counter-reset: item-counter;
+      /* margin:0 0 0 3em; */
 
       .column {
 
@@ -558,6 +562,7 @@ i.icon-phone {
 
 
     .masonry-no-border {
+      /* margin:0 !important; */
       .item {
         padding:0 !important;
       }
@@ -775,6 +780,9 @@ i.icon-phone {
     }
     .list, .article {
       padding:0 0 1em 0;
+    }
+    .article {
+
     }
     .back {
       width:60px;
