@@ -691,12 +691,16 @@ i.icon-phone {
 
 #resume {
 
+  background:rgba(0,0,0,0.04);
+  padding:100px 50px 100px 50px;
+  margin:0 50px 0 0;
+
 }
 
 #about {
 
 
-  /*
+
   height:100vh;
   display:flex;
   align-items:center;
@@ -732,7 +736,7 @@ i.icon-phone {
     filter:brightness(0.5);
     display:block;
     mix-blend-mode:overlay;
-    hard light, lighten, lumonisoty, color-burn
+    /* hard light, lighten, lumonisoty, color-burn */
   }
   .copy {
     font-size:365%;
@@ -745,7 +749,7 @@ i.icon-phone {
     margin:0;
   }
 
-*/
+
 
 }
 
@@ -1150,7 +1154,7 @@ body {
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 780px) {
 
   body, .expanded-page {
     .navigation {
@@ -1169,6 +1173,7 @@ body {
         justify-content:space-around;
         align-items:center;
         padding:0 4vw;
+        .nav-about { display:none; }
         a {
           padding:2.5vh 1vw;
           opacity:1 !important;
