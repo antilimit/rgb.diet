@@ -701,8 +701,8 @@ i.icon-phone {
   background: linear-gradient(to right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=1 );
 
-  background:#222;
-  color:#fff;
+  background:rgba(0,0,0,0.05);
+  color:#000;
   padding:100px 50px 100px 50px;
   margin:0 50px 0 0;
   overflow:hidden;
@@ -739,8 +739,9 @@ i.icon-phone {
 
   .history {
     h3 {
-      font-size:440%;
+      font-size:390%;
       line-height:1;
+      padding:0 0 0.35em 0;
     }
     .block {
       padding:0 0 1em 0;
@@ -758,12 +759,13 @@ i.icon-phone {
         .tag {
           display:inline-block;
           padding:0.05em 0.4em;
-          background:rgba(255,255,255,0.40);
+          background:rgba(0, 0, 0, 0.1);
           color:#000;
         }
       }
       .descrip {
         opacity:0.80;
+        line-height: 1.4;
       }
     }
     .block:last-child {
@@ -772,7 +774,7 @@ i.icon-phone {
     }
     .slim-block {
       opacity:0.30;
-      padding-bottom:2em;
+      padding-bottom:1.5em;
     }
     p {
       margin:0 0 0.5em 0;
@@ -788,22 +790,23 @@ i.icon-phone {
       font-weight:300;
     }
     strong {
-      color:#fff;
+      color:#000;
       text-transform:uppercase;
     }
     a {
       text-decoration:underline;
-      color:#fff;
     }
     ul {
       list-style-type: tibetan;
+      list-style-type:none;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.2;
       padding: 0 0 0 1.3em;
+      padding: 0 0 0 0.2em;
 
       li {
-        padding:0 0 0.5em 0;
-        color:#bbb;
+        padding:0 0 0.8em 0;
+        color:#777;
       }
     }
   }
@@ -1338,19 +1341,20 @@ body {
 
       #resume {
         margin-right:0;
-        padding:25px;
+        padding:35px;
         .pdf {
-          top:25px;
-          right:25px;
+          top:15px;
+          right:15px;
+          font-size:120%;
         }
         .left {
-          padding-top:35px;
+          padding-top:0;
         }
         .history {
           h3 {
-            font-size:330%;
+            font-size:280%;
             line-height:1;
-            padding:0.1em 0 0.15em 0;;
+            padding:0.2em 0 0.3em 0;
           }
         }
       }

@@ -477,8 +477,8 @@ i.icon-phone {
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=1 );
-  background: #222;
-  color: #fff;
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
   padding: 100px 50px 100px 50px;
   margin: 0 50px 0 0;
   overflow: hidden;
@@ -507,8 +507,9 @@ i.icon-phone {
     width: 60%;
     float: right; }
   #resume .history h3 {
-    font-size: 440%;
-    line-height: 1; }
+    font-size: 390%;
+    line-height: 1;
+    padding: 0 0 0.35em 0; }
   #resume .history .block {
     padding: 0 0 1em 0; }
     #resume .history .block h4 {
@@ -520,16 +521,17 @@ i.icon-phone {
     #resume .history .block .timeplace .tag {
       display: inline-block;
       padding: 0.05em 0.4em;
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(0, 0, 0, 0.1);
       color: #000; }
     #resume .history .block .descrip {
-      opacity: 0.80; }
+      opacity: 0.80;
+      line-height: 1.4; }
   #resume .history .block:last-child {
     padding-bottom: 0;
     margin-bottom: 0; }
   #resume .history .slim-block {
     opacity: 0.30;
-    padding-bottom: 2em; }
+    padding-bottom: 1.5em; }
   #resume .history p {
     margin: 0 0 0.5em 0; }
   #resume section {
@@ -538,19 +540,20 @@ i.icon-phone {
       font-size: 300%;
       font-weight: 300; }
     #resume section strong {
-      color: #fff;
+      color: #000;
       text-transform: uppercase; }
     #resume section a {
-      text-decoration: underline;
-      color: #fff; }
+      text-decoration: underline; }
     #resume section ul {
       list-style-type: tibetan;
+      list-style-type: none;
       margin: 0;
-      line-height: 1.4;
-      padding: 0 0 0 1.3em; }
+      line-height: 1.2;
+      padding: 0 0 0 1.3em;
+      padding: 0 0 0 0.2em; }
       #resume section ul li {
-        padding: 0 0 0.5em 0;
-        color: #bbb; }
+        padding: 0 0 0.8em 0;
+        color: #777; }
 
 #about {
   height: 100vh;
@@ -926,16 +929,17 @@ body .content .list .expanded-row {
       /* photo */ }
       body .content #resume, .expanded-page .content #resume {
         margin-right: 0;
-        padding: 25px; }
+        padding: 35px; }
         body .content #resume .pdf, .expanded-page .content #resume .pdf {
-          top: 25px;
-          right: 25px; }
+          top: 15px;
+          right: 15px;
+          font-size: 120%; }
         body .content #resume .left, .expanded-page .content #resume .left {
-          padding-top: 35px; }
+          padding-top: 0; }
         body .content #resume .history h3, .expanded-page .content #resume .history h3 {
-          font-size: 330%;
+          font-size: 280%;
           line-height: 1;
-          padding: 0.1em 0 0.15em 0; }
+          padding: 0.2em 0 0.3em 0; }
       body .content #photo .article .masonry .item .year, .expanded-page .content #photo .article .masonry .item .year {
         font-size: 125%;
         bottom: 1em;
