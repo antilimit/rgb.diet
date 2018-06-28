@@ -1,5 +1,14 @@
 /* colors */
 /* sizes */
+.red-text-color {
+  color: #F95000; }
+
+.blue-text-color {
+  color: #4EA6FF; }
+
+.green-text-color {
+  color: #4DE4A3; }
+
 body {
   /* font-family: 'proxima_nova_ltthin', sans-serif; */
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -408,11 +417,12 @@ i.icon-phone {
 
 /* overrides */
 #design {
-  padding-right: 50px; }
+  padding-right: 33%; }
 
 #photo {
   display: flex;
   flex-wrap: wrap;
+  padding-right: 40%;
   /* row */ }
   #photo .article .masonry .item {
     position: relative; }
@@ -433,7 +443,7 @@ i.icon-phone {
     background-position: center center;
     height: 27vh;
     background-color: rgba(0, 0, 0, 0.1);
-    width: 50%;
+    width: 100%;
     /* info */ }
     #photo .row .info {
       font-size: 120%;
@@ -463,9 +473,84 @@ i.icon-phone {
     /* transform:scaleY(0); */ }
 
 #resume {
-  background: rgba(0, 0, 0, 0.04);
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=1 );
+  background: #222;
+  color: #fff;
   padding: 100px 50px 100px 50px;
-  margin: 0 50px 0 0; }
+  margin: 0 50px 0 0;
+  overflow: hidden;
+  clear: both;
+  position: relative; }
+  #resume .pdf {
+    position: absolute;
+    z-index: 5;
+    top: 50px;
+    font-size: 140%;
+    background: #fff;
+    font-weight: 500;
+    padding: 0.5em 0.7em;
+    text-decoration: underline; }
+  #resume .left {
+    width: 35%;
+    padding: 50px 0 0 0;
+    float: left;
+    font-size: 90%; }
+    #resume .left strong {
+      margin-right: 0.5em;
+      display: block; }
+  #resume h3 {
+    letter-spacing: -0.03em; }
+  #resume .right {
+    width: 60%;
+    float: right; }
+  #resume .history h3 {
+    font-size: 440%;
+    line-height: 1; }
+  #resume .history .block {
+    padding: 0 0 1em 0; }
+    #resume .history .block h4 {
+      font-size: 130%;
+      line-height: 1.1; }
+    #resume .history .block a {
+      cursor: default;
+      text-decoration: none; }
+    #resume .history .block .timeplace .tag {
+      display: inline-block;
+      padding: 0.05em 0.4em;
+      background: rgba(255, 255, 255, 0.4);
+      color: #000; }
+    #resume .history .block .descrip {
+      opacity: 0.80; }
+  #resume .history .block:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0; }
+  #resume .history .slim-block {
+    opacity: 0.30;
+    padding-bottom: 2em; }
+  #resume .history p {
+    margin: 0 0 0.5em 0; }
+  #resume section {
+    padding: 0 0 1em 0; }
+    #resume section h3 {
+      font-size: 300%;
+      font-weight: 300; }
+    #resume section strong {
+      color: #fff;
+      text-transform: uppercase; }
+    #resume section a {
+      text-decoration: underline;
+      color: #fff; }
+    #resume section ul {
+      list-style-type: tibetan;
+      margin: 0;
+      line-height: 1.4;
+      padding: 0 0 0 1.3em; }
+      #resume section ul li {
+        padding: 0 0 0.5em 0;
+        color: #bbb; }
 
 #about {
   height: 100vh;
@@ -591,8 +676,7 @@ body .content .list .expanded-row {
 
 /* design rows */
 #row-24hf {
-  background-color: #314360;
-  height: 35vh; }
+  background-color: #314360; }
 
 #row-24hf::after {
   background-image: url(../design/24hf/hero.jpg); }
@@ -637,7 +721,7 @@ body .content .list .expanded-row {
 
 #row-ahl {
   background-color: #0070bf;
-  height: 35vh; }
+  height: 42vh; }
 
 #row-ahl::after {
   background-image: url(../design/ahl/hero.jpg); }
@@ -783,6 +867,14 @@ body .content .list .expanded-row {
 #row-yellowstone::after {
   background-image: url(../photo/yellowstone.jpg); }
 
+@media only screen and (max-width: 1200px) {
+  body .content #design, body .content #photo, .expanded-page .content #design, .expanded-page .content #photo {
+    padding-right: 50px; }
+  body .content #resume .left, .expanded-page .content #resume .left {
+    width: 100%; }
+  body .content #resume .right, .expanded-page .content #resume .right {
+    width: 100%;
+    float: left; } }
 @media only screen and (max-width: 900px) {
   body .content .list .row .info, .expanded-page .content .list .row .info {
     padding-right: 50%; } }
@@ -832,6 +924,18 @@ body .content .list .expanded-row {
       left: 0;
       padding-bottom: 9vh;
       /* photo */ }
+      body .content #resume, .expanded-page .content #resume {
+        margin-right: 0;
+        padding: 25px; }
+        body .content #resume .pdf, .expanded-page .content #resume .pdf {
+          top: 25px;
+          right: 25px; }
+        body .content #resume .left, .expanded-page .content #resume .left {
+          padding-top: 35px; }
+        body .content #resume .history h3, .expanded-page .content #resume .history h3 {
+          font-size: 330%;
+          line-height: 1;
+          padding: 0.1em 0 0.15em 0; }
       body .content #photo .article .masonry .item .year, .expanded-page .content #photo .article .masonry .item .year {
         font-size: 125%;
         bottom: 1em;

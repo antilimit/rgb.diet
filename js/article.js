@@ -28,7 +28,8 @@ if (sectionID == 'photo') {
       success: function (data) {
           // List all .png file names in the page
           $(data).find("a:contains(" + fileextension + ")").each(function () {
-              var filename = this.href.replace(window.location, "").replace("http://rgb.diet/temp/new/", "");
+              // domain path update
+              var filename = this.href.replace(window.location, "").replace("http://rgb.diet/", "");
               var year = this.href.split('-')[1].replace(".jpg", "");
               $('.masonry').append('<a class="item" href="#"><img src="' + dir + filename + '" /><span class="year">' + year + '</span></a>');
           });

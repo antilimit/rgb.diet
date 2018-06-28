@@ -17,6 +17,10 @@ $left-width-expanded: 25vw;
 $left-width:35vw;
 $right-width-expanded: 75vw;
 
+.red-text-color { color:$red; }
+.blue-text-color { color:$blue; }
+.green-text-color { color:$green; }
+
 
 
 
@@ -605,12 +609,13 @@ i.icon-phone {
 
 
 #design {
-  padding-right:50px;
+  padding-right:33%;
 }
 
 #photo {
   display:flex;
   flex-wrap:wrap;
+  padding-right:40%;
 
   .article {
     .masonry {
@@ -640,7 +645,7 @@ i.icon-phone {
     background-position:center center;
     height:27vh;
     background-color:rgba(0,0,0,0.10);
-    width:50%;
+    width:100%;
 
     .info {
       font-size:120%;
@@ -691,9 +696,117 @@ i.icon-phone {
 
 #resume {
 
-  background:rgba(0,0,0,0.04);
+  background: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=1 );
+
+  background:#222;
+  color:#fff;
   padding:100px 50px 100px 50px;
   margin:0 50px 0 0;
+  overflow:hidden;
+  clear:both;
+  position:relative;
+
+  .pdf {
+    position:absolute;
+    z-index:5;
+    top:50px;
+    font-size:140%;
+    background:#fff;
+    font-weight:500;
+    padding:0.5em 0.7em;
+    text-decoration:underline;
+  }
+  .left {
+    width:35%;
+    padding:50px 0 0 0;
+    float:left;
+    font-size:90%;
+    strong {
+      margin-right:0.5em;
+      display:block;
+    }
+  }
+  h3 {
+    letter-spacing:-0.03em;
+  }
+  .right {
+    width:60%;
+    float:right;
+  }
+
+  .history {
+    h3 {
+      font-size:440%;
+      line-height:1;
+    }
+    .block {
+      padding:0 0 1em 0;
+
+      h4 {
+        font-size:130%;
+        line-height:1.1;
+      }
+      a {
+        cursor:default;
+        text-decoration:none;
+      }
+      .timeplace {
+
+        .tag {
+          display:inline-block;
+          padding:0.05em 0.4em;
+          background:rgba(255,255,255,0.40);
+          color:#000;
+        }
+      }
+      .descrip {
+        opacity:0.80;
+      }
+    }
+    .block:last-child {
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+    .slim-block {
+      opacity:0.30;
+      padding-bottom:2em;
+    }
+    p {
+      margin:0 0 0.5em 0;
+    }
+
+  }
+
+  section {
+    padding:0 0 1em 0;
+
+    h3 {
+      font-size:300%;
+      font-weight:300;
+    }
+    strong {
+      color:#fff;
+      text-transform:uppercase;
+    }
+    a {
+      text-decoration:underline;
+      color:#fff;
+    }
+    ul {
+      list-style-type: tibetan;
+      margin: 0;
+      line-height: 1.4;
+      padding: 0 0 0 1.3em;
+
+      li {
+        padding:0 0 0.5em 0;
+        color:#bbb;
+      }
+    }
+  }
 
 }
 
@@ -905,7 +1018,6 @@ body {
 
 #row-24hf {
   background-color:#314360;
-  height:35vh;
 }
 #row-24hf::after {
   background-image:url(../design/24hf/hero.jpg);
@@ -957,7 +1069,7 @@ body {
 
 #row-ahl {
   background-color:#0070bf;
-  height:35vh;
+  height:42vh;
 }
 #row-ahl::after {
   background-image:url(../design/ahl/hero.jpg);
@@ -1128,6 +1240,28 @@ body {
 
 
 
+@media only screen and (max-width: 1200px) {
+
+  body, .expanded-page {
+    .content {
+      #design, #photo {
+        padding-right:50px;
+      }
+      #resume {
+        .left {
+          width:100%;
+        }
+        .right {
+          width:100%;
+          float:left;
+        }
+      }
+    }
+  }
+
+}
+
+
 
 
 
@@ -1201,6 +1335,25 @@ body {
       width:100%;
       left:0;
       padding-bottom:9vh;
+
+      #resume {
+        margin-right:0;
+        padding:25px;
+        .pdf {
+          top:25px;
+          right:25px;
+        }
+        .left {
+          padding-top:35px;
+        }
+        .history {
+          h3 {
+            font-size:330%;
+            line-height:1;
+            padding:0.1em 0 0.15em 0;;
+          }
+        }
+      }
 
       #photo {
         .article {
