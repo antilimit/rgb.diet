@@ -227,13 +227,13 @@ i.icon-phone {
       /* filter:brightness(1);*/ }
     .content .list .row:hover::after {
       /* filter:brightness(1.1); */
+      filter: contrast(1.3);
       /* hard light or lumionsoity */
       /* mix-blend-mode:hard-light; */
-      /* box-shadow: inset 0 0 0 0.75em #fff; */
+      /* box-shadow: inset 0 0 0 0.4em #fff; */
       transform: scale(1, 1);
-      /* left/right
-      box-shadow: inset 30px 0 0 -10px #fff, inset -30px 0 0 -10px #fff;
-      */ }
+      /* left/right */
+      box-shadow: inset 20px 0 0 -10px #fff, inset -20px 0 0 -10px #fff; }
     .content .list .row {
       height: 25vh;
       color: #fff;
@@ -317,12 +317,26 @@ i.icon-phone {
       height: 100%;
       padding: 3em 3em 0 0;
       display: block;
-      cursor: default; }
+      cursor: default;
+      position: relative; }
       .content .article .masonry .item img {
         display: block;
         width: 100%;
         min-height: 10em;
         object-fit: contain; }
+    .content .article .masonry .inner-video-border {
+      position: relative; }
+    .content .article .masonry .inner-video-border::after {
+      content: " ";
+      box-shadow: inset 9px 0px 0px #fff, inset -57px 0px 0px #fff, inset 0 69px 0px #fff, inset 0 -7px 0px #fff;
+      position: absolute;
+      margin-left: -1px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .content .article .masonry .tablet-inner-video-border::after {
+      box-shadow: inset 12px 0px 0px #fff, inset -57px 0px 0px #fff, inset 0 72px 0px #fff, inset 0 -19px 0px #fff; }
     .content .article .masonry .cover img {
       height: 100%;
       object-fit: cover; }
@@ -473,13 +487,9 @@ i.icon-phone {
     /* transform:scaleY(0); */ }
 
 #resume {
-  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=1 );
-  background: rgba(0, 0, 0, 0.05);
+  background: transparent;
   color: #000;
-  padding: 100px 50px 100px 50px;
+  padding: 0;
   margin: 0 50px 0 0;
   overflow: hidden;
   clear: both;
@@ -488,6 +498,7 @@ i.icon-phone {
     position: absolute;
     z-index: 5;
     top: 50px;
+    left: 45px;
     font-size: 140%;
     background: #fff;
     font-weight: 500;
@@ -495,23 +506,26 @@ i.icon-phone {
     text-decoration: underline; }
   #resume .left {
     width: 35%;
-    padding: 50px 0 0 0;
+    padding: 80px 4% 75px 4%;
     float: left;
-    font-size: 90%; }
+    font-size: 90%;
+    margin: 50px 0 0 0;
+    background: rgba(0, 0, 0, 0.05); }
     #resume .left strong {
       margin-right: 0.5em;
       display: block; }
-  #resume h3 {
-    letter-spacing: -0.03em; }
   #resume .right {
     width: 60%;
-    float: right; }
+    float: right;
+    margin: 75px 0 0 0; }
+  #resume h3 {
+    letter-spacing: -0.03em; }
   #resume .history h3 {
     font-size: 390%;
     line-height: 1;
-    padding: 0 0 0.35em 0; }
+    padding: 0 0 0.5em 0; }
   #resume .history .block {
-    padding: 0 0 1em 0; }
+    padding: 0 0 2em 0; }
     #resume .history .block h4 {
       font-size: 130%;
       line-height: 1.1; }
@@ -524,14 +538,13 @@ i.icon-phone {
       background: rgba(0, 0, 0, 0.1);
       color: #000; }
     #resume .history .block .descrip {
-      opacity: 0.80;
-      line-height: 1.4; }
+      opacity: 0.80; }
   #resume .history .block:last-child {
     padding-bottom: 0;
     margin-bottom: 0; }
   #resume .history .slim-block {
     opacity: 0.30;
-    padding-bottom: 1.5em; }
+    padding-bottom: 2.5em; }
   #resume .history p {
     margin: 0 0 0.5em 0; }
   #resume section {
@@ -633,11 +646,11 @@ i.icon-phone {
         /* display:none; */
         /* height:0; */ }
       .expanded-page .content .list .row:hover::after {
-        /* filter:brightness(1); */
+        filter: contrast(1) !important;
         /* hard light or lumionsoity */
         /* mix-blend-mode:hard-light; */
         box-shadow: none;
-        transform: scale(1.04, 1.04) !important; }
+        transform: scale(1.05, 1.05) !important; }
       .expanded-page .content .list .expanded-row {
         margin: 0 !important;
         width: 100% !important;
@@ -874,10 +887,22 @@ body .content .list .expanded-row {
   body .content #design, body .content #photo, .expanded-page .content #design, .expanded-page .content #photo {
     padding-right: 50px; }
   body .content #resume .left, .expanded-page .content #resume .left {
-    width: 100%; }
+    width: 100%;
+    padding: 60px 0 0 0; }
+  body .content #resume .history h3, .expanded-page .content #resume .history h3 {
+    font-size: 330%;
+    padding: 20px 0 0.5em 0; }
   body .content #resume .right, .expanded-page .content #resume .right {
     width: 100%;
-    float: left; } }
+    float: left;
+    background: rgba(0, 0, 0, 0.05);
+    margin: 0;
+    padding: 0 0 60px 0; }
+    body .content #resume .right section, .expanded-page .content #resume .right section {
+      border: none; }
+  body .content #resume section, .expanded-page .content #resume section {
+    padding: 20px 45px 25px 45px;
+    border-bottom: 5px solid #fff; } }
 @media only screen and (max-width: 900px) {
   body .content .list .row .info, .expanded-page .content .list .row .info {
     padding-right: 50%; } }
@@ -928,18 +953,31 @@ body .content .list .expanded-row {
       padding-bottom: 9vh;
       /* photo */ }
       body .content #resume, .expanded-page .content #resume {
-        margin-right: 0;
-        padding: 35px; }
+        margin: 0;
+        padding: 0; }
         body .content #resume .pdf, .expanded-page .content #resume .pdf {
-          top: 15px;
-          right: 15px;
-          font-size: 120%; }
+          top: 0;
+          left: auto;
+          right: 45px;
+          font-size: 130%;
+          padding: 15px 0;
+          width: 120px;
+          text-align: center; }
         body .content #resume .left, .expanded-page .content #resume .left {
-          padding-top: 0; }
+          padding: 20px 0 0 0;
+          margin: 0; }
+        body .content #resume .right, .expanded-page .content #resume .right {
+          margin-bottom: 0;
+          padding-bottom: 0; }
         body .content #resume .history h3, .expanded-page .content #resume .history h3 {
           font-size: 280%;
           line-height: 1;
           padding: 0.2em 0 0.3em 0; }
+        body .content #resume section, .expanded-page .content #resume section {
+          padding-left: 35px;
+          padding-right: 35px; }
+          body .content #resume section ul li, .expanded-page .content #resume section ul li {
+            font-size: 115%; }
       body .content #photo .article .masonry .item .year, .expanded-page .content #photo .article .masonry .item .year {
         font-size: 125%;
         bottom: 1em;
@@ -962,9 +1000,10 @@ body .content .list .expanded-row {
         left: 0;
         right: auto;
         bottom: 9vh;
-        padding: 3px;
-        width: 18%;
-        margin: 0; }
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: 0 0px 16px -5px rgba(0, 0, 0, 0.4); }
       body .content .list, .expanded-page .content .list {
         /* expanded-row */ }
         body .content .list .expanded-row, .expanded-page .content .list .expanded-row {
@@ -1007,6 +1046,10 @@ body .content .list .expanded-row {
         body .content .article .masonry, .expanded-page .content .article .masonry {
           column-count: 1;
           display: block; }
+          body .content .article .masonry .tablet-inner-video-border::after,
+          body .content .article .masonry .inner-video-border::after, .expanded-page .content .article .masonry .tablet-inner-video-border::after,
+          .expanded-page .content .article .masonry .inner-video-border::after {
+            display: none; }
           body .content .article .masonry .column, .expanded-page .content .article .masonry .column {
             width: 100%; }
           body .content .article .masonry .item, .expanded-page .content .article .masonry .item {
