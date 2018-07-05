@@ -249,7 +249,7 @@ i.icon-phone {
       background-color: rgba(0, 0, 0, 0.03);
       transform-origin: center; }
       .content .list .row .info {
-        padding: 0 72% 0 2em;
+        padding: 0 65% 0 2em;
         font-size: 110%;
         transform-origin: left center;
         line-height: 1.2;
@@ -315,7 +315,7 @@ i.icon-phone {
       counter-increment: item-counter;
       width: 100%;
       height: 100%;
-      padding: 3em 3em 0 0;
+      padding: 2em 2em 0 0;
       display: block;
       cursor: default;
       position: relative; }
@@ -439,7 +439,8 @@ i.icon-phone {
   padding-right: 40%;
   /* row */ }
   #photo .article .masonry .item {
-    position: relative; }
+    position: relative;
+    padding: 1em 1em 0 0; }
     #photo .article .masonry .item img {
       display: block;
       min-height: 20vh;
@@ -656,7 +657,7 @@ i.icon-phone {
         width: 100% !important;
         opacity: 1 !important; }
         .expanded-page .content .list .expanded-row .info {
-          padding-right: 55%;
+          padding-right: 60%;
           mix-blend-mode: screen;
           padding-top: 10vh; }
           .expanded-page .content .list .expanded-row .info h1 {
