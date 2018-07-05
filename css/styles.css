@@ -850,6 +850,9 @@ body .content .list .expanded-row {
 #row-newyork::after {
   background-image: url(../photo/newyork.jpg); }
 
+#row-newjersey::after {
+  background-image: url(../photo/newjersey.jpg); }
+
 #row-paris::after {
   background-image: url(../photo/paris.jpg); }
 
