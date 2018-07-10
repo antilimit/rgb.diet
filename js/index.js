@@ -11,6 +11,9 @@ var sectionID;
 var rowID;
 var pageState;
 
+var cardHeight = ($(window).height() * .30);
+console.log(cardHeight);
+
 // domain path update
 var root = 'http://rgb.diet/'
 

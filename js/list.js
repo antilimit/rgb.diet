@@ -65,7 +65,7 @@ row.click(function(e) {
         }
       }, 2000);
       */
-    }, 300);
+    }, 500);
 
   } else {
 
@@ -73,7 +73,8 @@ row.click(function(e) {
     pageState = 'list';
     $('#ajax-article').remove();
     $body.removeClass('hide-rows');
-    $('html, body').animate({ scrollTop: ($(this).offset().top - 0) }, 0);
+    $('html, body').animate({ scrollTop: ($(this).offset().top) }, 0);
+    // $('html, body').animate({ scrollTop: ($(this).offset().top - cardHeight) }, 0);    
     console.log($(this).offset().top);
     /*
     history.pushState({
