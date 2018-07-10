@@ -109,7 +109,9 @@ $back.click(function(e) {
   $('#ajax-article').remove();
   $body.removeClass('hide-rows');
   $body.removeClass('expanded-page');
-  $('html, body').animate({ scrollTop: ($('.expanded-row').offset().top - 0) }, 0);
+  $('html, body').animate({ scrollTop: (
+    $('.expanded-row').offset().top - 0) }, 0
+  );
   $('.expanded-row').removeClass('expanded-row');
 
   e.preventDefault();

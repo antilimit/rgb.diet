@@ -108,7 +108,7 @@ i.icon-phone {
     .logo {
       font-size:650%;
       letter-spacing:-0.19em;
-      transform:scale(1.8,1.8);
+      transform:scale(1.5,1.5);
       position:absolute;
       left: -1.3em;
       margin-top: -48px;
@@ -283,6 +283,8 @@ i.icon-phone {
 
   .list {
     transition:all 0.5s ease;
+    overflow:hidden;
+    clear:both;
 
     .left-accent {
       position:absolute;
@@ -320,14 +322,16 @@ i.icon-phone {
       /* box-shadow: inset 0 0 0 0.4em #fff; */
       transform:scale(1.0, 1.0);
       /* left/right */
-      box-shadow: inset 20px 0 0 -10px #fff, inset -20px 0 0 -10px #fff;
+      /* box-shadow: inset 20px 0 0 -10px #fff, inset -20px 0 0 -10px #fff; */
 
     }
 
     .row {
-      height:25vh;
+      height:30vh;
 
       color:#fff;
+      width:50%;
+      float:left;
       overflow:hidden;
       position:relative;
       transition:all 0.4s ease-out;
@@ -342,7 +346,7 @@ i.icon-phone {
 
 
       .info {
-        padding:0 65% 0 2em;
+        padding:0 60% 0 2em;
         font-size:110%;
         transform-origin:left center;
         line-height:1.2;
@@ -388,8 +392,11 @@ i.icon-phone {
           }
         }
       }
-
     } /* row */
+
+    .row:nth-child(even)  {
+      float:right;
+    }
 
     .row:hover {
 
@@ -416,6 +423,9 @@ i.icon-phone {
 
 
   .article {
+
+    clear:both;
+    overflow:hidden;
 
     .masonry {
       column-count: 1;
@@ -630,13 +640,15 @@ i.icon-phone {
 
 
 #design {
-  padding-right:33%;
+  /* padding-right:33%; */
 }
 
 #photo {
+  /*
   display:flex;
   flex-wrap:wrap;
-  padding-right:40%;
+  */
+  /* padding-right:40%; */
 
   .article {
     .masonry {
@@ -666,9 +678,8 @@ i.icon-phone {
 
   .row {
     background-position:center center;
-    height:27vh;
+    height:25vh;
     background-color:rgba(0,0,0,0.10);
-    width:100%;
 
     .info {
       font-size:120%;
@@ -812,6 +823,8 @@ i.icon-phone {
     h3 {
       font-size:300%;
       font-weight:300;
+      padding-bottom:0.2em;
+      line-height:1;
     }
     strong {
       color:#000;
@@ -1010,7 +1023,7 @@ i.icon-phone {
   .content {
     .list {
       .row {
-        display:none;
+        display:none;        
       }
     }
   }
@@ -1066,7 +1079,7 @@ body {
 
 #row-thecube {
   background-color:#e45d25;
-  height:35vh;
+  /* height:35vh; */
 }
 #row-thecube::after {
   background-image:url(../design/thecube/hero.jpg);
@@ -1088,7 +1101,7 @@ body {
 
 #row-auto {
   background-color:#4AAB9E;
-  height:35vh;
+  /* height:35vh; */
 }
 #row-auto::after {
   background-image:url(../design/auto/hero.jpg);
@@ -1096,7 +1109,7 @@ body {
 
 #row-ahl {
   background-color:#0070bf;
-  height:42vh;
+  /* height:42vh; */
 }
 #row-ahl::after {
   background-image:url(../design/ahl/hero.jpg);
@@ -1267,16 +1280,30 @@ body {
 
 
 
-
-
-
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1260px) {
 
   body, .expanded-page {
     .content {
-      #design, #photo {
-        padding-right:50px;
+      .list {
+        .row {
+          width:100%;
+          float:none;
+        }
       }
+    }
+  }
+
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1100px) {
+
+  body, .expanded-page {
+    .content {
       #resume {
         .left {
           width:100%;

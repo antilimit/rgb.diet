@@ -28,7 +28,7 @@ row.click(function(e) {
   if ($body.hasClass('expanded-page')) {
     // expanding
 
-    $('html, body').animate({ scrollTop: ($(this).offset().top - 52) }, 300);
+    $('html, body').animate({ scrollTop: ($(this).offset().top) }, 300);
     setTimeout(function(){
       var div = $('<div id="ajax-article" />');
       if (sectionID == 'design') {
@@ -52,6 +52,9 @@ row.click(function(e) {
       $body.addClass('hide-rows');
       $('html, body').animate({ scrollTop: 0 }, 0);
 
+      // $( ".row:odd" ).css( "margin-top", "-30vh" );
+
+
       // if they haven't scrolled down after a few seconds
       // show them there's more to see
       // little buggy
@@ -62,7 +65,7 @@ row.click(function(e) {
         }
       }, 2000);
       */
-    }, 500);
+    }, 300);
 
   } else {
 
@@ -71,7 +74,7 @@ row.click(function(e) {
     $('#ajax-article').remove();
     $body.removeClass('hide-rows');
     $('html, body').animate({ scrollTop: ($(this).offset().top - 0) }, 0);
-
+    console.log($(this).offset().top);
     /*
     history.pushState({
         id: 'homepage'
